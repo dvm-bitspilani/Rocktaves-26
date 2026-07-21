@@ -1,0 +1,26 @@
+.RulesWrapper{
+ position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.RulesTitle{
+   padding: 0.1rem 0rem 0rem 2rem;
+   width: 37%;
+}
+.RulesListWrapper{
+    width: 52%;
+    padding-left: 4rem;
+}
+.RulesList li{
+font-family: "Chakra Petch";
+line-height: 2.2rem;
+font-size: 1.5rem;
+color: white;
+}
+
+.RulesList span{
+    color: #BB2C2C;
+}

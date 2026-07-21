@@ -2,11 +2,11 @@ import React from 'react';
 import Register from '../../pages/register/register';
 import { useNavigate } from "react-router-dom";
 import styles from "../../styles/landing/Home.module.css";
-import heroBg from "../../assets/heroBg.png";
-import heroLogo from "../../assets/heroLogo.png";
-import RegisterNow from "../../assets/RegisterNow.png";
-import FooterStrip from "../../assets/FooterStrip.png";
-import ScrollDown from "../../assets/ScrollDown.png";
+import heroBg from "../../assets/images/home/heroBg.png";
+import heroLogo from "../../assets/images/home/heroLogo.png";
+import RegisterNow from "../../assets/images/home/RegisterNow.png";
+import FooterStrip from "../../assets/images/home/FooterStrip.png";
+import ScrollDown from "../../assets/images/home/ScrollDown.png";
 const Home = () => {
    const navigate = useNavigate();
   return (

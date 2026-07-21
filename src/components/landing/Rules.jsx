@@ -1,34 +1,38 @@
 import React from "react";
+import styles from "../../styles/landing/Rules.module.css";
+import RulesBg from "../../assets/images/rules/RulesBg.png";
+import RulesTitle from "../../assets/images/rules/RulesTitle.svg";
 
 const Rules = () => {
   return (
-    <div>
-      <h1>Rules</h1>
-      <h2>preliminary rounds</h2>
-      <ul>
+    <div className={styles.RulesWrapper} style={{backgroundImage:`url(${RulesBg})`}}>
+      <img src={RulesTitle} alt="RulesTitle" className={styles.RulesTitle} />   {/*  need to reduce the space between heading and para */}
+     <div className={styles.RulesListWrapper}>
+      <ol className={styles.RulesList}>
         <li>
-          Bands must submit at least 15 minutes of live content or three
+          Bands must submit <span>at least 15 minutes</span> of live content or three
           songs.The maximum time permissible will be 20 minutes.
         </li>
         <li>
-          The performance must be live. Playing over a pre-recorded track is not
+          The performance <span>must be live</span>.Playing over a pre-recorded track is not
           allowed.
         </li>
         <li>
-          Bands based in cities where the preliminary bands are being hosted are
-          not allowed to register for the online round.
+          Bands based in cities where the preliminary bands are being hosted are 
+          <span> not allowed</span> to register for the online round.
         </li>
         <li>
-          Separate communication regarding the online round will be communicated
+          <span>Separate communication</span> regarding the online round will be communicated
           to the bands registered for the same.
         </li>
         <li>
-          The judging parameters will be informed to the band before their
+          The<span> judging parameters</span> will be informed to the band before their
           performance.
         </li>
 
-        <li>It is necessary to only perform original compositions.</li>
-      </ul>
+        <li>It is necessary to perform <span>only original compositions</span>.</li>
+      </ol>
+      </div>
     </div>
   );
 };

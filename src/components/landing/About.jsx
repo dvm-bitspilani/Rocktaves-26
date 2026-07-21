@@ -1,7 +1,8 @@
 import React from "react";
+import styles from "../../styles/landing/About.module.css";
 const About=()=>{
     return(
-        <div>
+        <div className="AboutWrapper">
             <h1>About</h1>
             <p>
                 Rocktaves is one of India’s oldest and most widespread 
