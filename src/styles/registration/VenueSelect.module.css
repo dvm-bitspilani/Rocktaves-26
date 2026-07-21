@@ -1,0 +1,86 @@
+/* .Select{
+    height: 3rem;
+    width: 100% ;
+    background-color: #181818;
+    border: 1px solid #575757;
+    padding-left: 0.8rem;
+}
+.Option{
+    color: white;
+    font-size: 3rem;
+} */
+.dropdownContainer {
+    position: relative;
+    width: 100%;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+.selectTrigger {
+    height: 3rem;
+    width: 100%;
+    background-color: #181818;
+    border: 1px solid #575757;
+    padding: 0 1rem;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+.arrow {
+    font-size: 0.8rem;
+    transition: transform 0.2s ease;
+}
+
+.open .arrow {
+    transform: rotate(180deg);
+}
+
+/* Container panel for the grid options */
+.gridDialog {
+    position: absolute;
+    top: 105%;
+    left: 0;
+    width: 100%;
+    background-color: #181818;
+    border: 1px solid #575757;
+    padding: 1rem;
+    z-index: 100;
+    box-sizing: border-box;
+}
+
+/* Grid layout with exactly 3 items per row */
+.gridContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+}
+
+/* Button styles for each city */
+.gridItem {
+    background-color: #242424;
+    border: 1px solid #3a3a3a;
+    color: white;
+    padding: 0.8rem 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.15s ease;
+    border-radius: 4px;
+}
+
+.gridItem:hover {
+    background-color: #333333;
+    border-color: #666666;
+}
+
+.gridItem.selected {
+    background-color: #ffffff;
+    color: #181818;
+    border-color: #ffffff;
+    font-weight: bold;
+}

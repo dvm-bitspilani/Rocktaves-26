@@ -1,0 +1,8 @@
+.ContactInfoTitle{
+    color: white;
+    font-weight: 600;
+    font-size: 2rem;
+}
+.ContactInfoWrapper{
+    width: 40%;
+}

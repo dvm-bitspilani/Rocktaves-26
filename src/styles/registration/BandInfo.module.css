@@ -1,0 +1,13 @@
+.BandInfoTitle{
+    color: white;
+    font-weight: 600;
+    font-size: 2rem;
+}
+.BandInfoInputField{
+display: flex;
+flex-direction: column;
+gap: 1rem;
+}
+.BandInfoWrapper{
+    width: 40%;
+}
