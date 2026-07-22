@@ -1,10 +1,10 @@
 import React from "react";
-import styles from "../../styles/landing/Timeline.module.css";
-import TimelineBg from "../../assets/images/Timeline/TimelineBg.svg";
-import TimelineTitle from "../../assets/images/Timeline/TimelineTitle.svg";
-import StepBg_1 from "../../assets/images/Timeline/StepBg_1.svg";
-import StepBg_2 from "../../assets/images/Timeline/StepBg_2.svg";
-import StepBg_3 from "../../assets/images/Timeline/StepBg_3.svg";
+import styles from "../../styles/landing/timeline.module.css";
+import TimelineBg from "../../assets/images/timeline/TimelineBg.svg";
+import TimelineTitle from "../../assets/images/timeline/TimelineTitle.svg";
+import StepBg_1 from "../../assets/images/timeline/StepBg_1.svg";
+import StepBg_2 from "../../assets/images/timeline/StepBg_2.svg";
+import StepBg_3 from "../../assets/images/timeline/StepBg_3.svg";
 
 const Timeline = () => {
   return (
