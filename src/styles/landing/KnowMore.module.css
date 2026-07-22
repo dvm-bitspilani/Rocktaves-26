@@ -1,0 +1,14 @@
+.KnowMoreWrapper{
+    position: relative;
+    height: 150vh;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+
+}
+.FooterStrip{
+    position: absolute;
+    width: 100%;
+    bottom: 0%;
+}

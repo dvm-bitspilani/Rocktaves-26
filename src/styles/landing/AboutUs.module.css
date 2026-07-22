@@ -1,0 +1,13 @@
+.AboutUsTitle{
+    margin-left: 2rem;
+    width: 40%;
+}
+.AboutUsText{
+    width: 50%;
+    padding-left: 4rem;
+}
+.AboutUsText p{
+font-size: 1.5rem;
+line-height: 2rem;
+color: white;
+}
