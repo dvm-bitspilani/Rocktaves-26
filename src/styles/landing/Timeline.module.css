@@ -1,0 +1,49 @@
+.TimelineWrapper{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.TimelineTitle{
+    padding: 4.5rem 0rem 0rem 5rem;
+    width: 24%;
+}
+.StepsWrapper{
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+    flex: 1;
+    gap: 4rem;
+    width: 100%;
+    height: 100%;
+}
+.StepsWrapper p{
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: white;
+}
+.Step_1,.Step_2,.Step_3{
+    width: 25%;
+    height: 100%;
+    background-size: contain;
+    background-position: top center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+.StepText_1{
+    margin-top: 5rem;
+    padding: 2rem 2.5rem;
+}
+.StepText_2{
+    margin-top: 8rem;
+    padding: 2rem 2.5rem;
+}
+.StepText_3{
+    margin-top: 8rem;
+    padding: 2rem 2.5rem;
+}
