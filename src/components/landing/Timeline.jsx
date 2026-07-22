@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../../styles/landing/timeline.module.css";
+import styles from "../../styles/landing/Timeline.module.css";
 import TimelineBg from "../../assets/images/timeline/TimelineBg.svg";
 import TimelineTitle from "../../assets/images/timeline/TimelineTitle.svg";
 import StepBg_1 from "../../assets/images/timeline/StepBg_1.svg";
