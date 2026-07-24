@@ -7,18 +7,18 @@ const ContactInput = ({
   optional = false,
 }) => {
   return (
-    <div>
-      <label className={styles.ContactLabel}>
-        Contact {contactNum} {optional && "(Optional)"}
-      </label>
+    <div className={styles.ContactInputWrapper}>
+      <p className={styles.ContactHeading}>
+        CONTACT {contactNum}: {optional && "(Optional)"}
+      </p>
 
-      <div>
+      <div className={styles.ContactInputBoxRow}>
         <input
           name={nameField.name}
           placeholder={nameField.placeholder}
           type={nameField.type}
           maxLength={nameField.maxLength}
-          className={styles.ContactInputBox}
+          className={styles.ContactInputBox1}
         />
 
         <input
@@ -26,7 +26,7 @@ const ContactInput = ({
           placeholder={phoneField.placeholder}
           type={phoneField.type}
           maxLength={phoneField.maxLength}
-          className={styles.ContactInputBox}
+          className={styles.ContactInputBox2}
         />
       </div>
     </div>

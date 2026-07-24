@@ -1,11 +1,26 @@
+.BandInputWrapper{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    
+}
 .BandInputBox{
-    height: 3rem;
+    height: 2.5rem;
     width: 100% ;
-   background-color: #202020;
-    border: 1px solid #B53227;
+   background-color: #0B0B0B;
+    border: 2px solid #B53227;
     padding-left: 0.8rem;
+    padding-right: 0.8rem;
+    box-sizing: border-box;
 }
 .BandInputBox::placeholder{
     color: #9A9898;
     font-size: 1.2rem;
+}
+.BandInputBoxHeading{
+    margin: 0;
+    color: #E35448;
+    font-size: 0.8rem;
+    font-weight: 400;
 }

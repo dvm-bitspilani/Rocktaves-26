@@ -1,13 +1,14 @@
 import React from "react";
 import styles from "../../styles/registration/BandInput.module.css";
-const BandInput = ({ name, placeholder, type, maxLength }) => {
+const BandInput = (props) => {
   return (
-    <div >
+    <div className={styles.BandInputWrapper}>
+      <h4 className={styles.BandInputBoxHeading}>{props.field.heading}</h4>
       <input className={styles.BandInputBox}
-        name={name}
-        type={type}
-        placeholder={placeholder}
-        maxLength={maxLength}
+        name={props.field.name}
+        type={props.field.type}
+        placeholder=''
+        maxLength={props.field.maxLength}
       />
     </div>
   );

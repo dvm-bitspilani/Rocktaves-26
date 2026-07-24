@@ -1,12 +1,12 @@
-import React, { useRef,useState} from "react";
+import React, { useRef, useState } from "react";
 import axios from "axios";
 import BandInfo from "../../components/registration/BandInfo";
 import ContactInfo from "../../components/registration/ContactInfo";
 import Header from "../../components/registration/Header";
 import styles from "../../styles/registration/Register.module.css";
 import Toaster from "../../components/registration/Toaster";
-
-
+import RegisterBg from "../../assets/images/register/RegisterBg.svg";
+import footerStrip from "../../assets/images/register/footerStrip.svg";
 const venues = ["Mumbai", "Bangalore", "Chennai", "Delhi", "Kolkata", "Online"];
 const formInputPattern = {
   name: /^.+$/,
@@ -25,15 +25,13 @@ const formInputPattern = {
 
 const Register = () => {
   const RegisterFormRef = useRef(null);
-   const [notification, setNotification] = useState(null);
-    const addNotif = (message) => {
-      setNotification(
-        {
-          message,
-          key: Date.now(),
-        },
-    );
-    };
+  const [notification, setNotification] = useState(null);
+  const addNotif = (message) => {
+    setNotification({
+      message,
+      key: Date.now(),
+    });
+  };
   const handleFormSubmit = (event) => {
     event.stopPropagation();
     event.preventDefault();
@@ -42,67 +40,64 @@ const Register = () => {
     const formData = Object.fromEntries(data.entries());
     console.log(formData);
     const baseLink = "https://prereg.bits-oasis.org";
-   
+
     if (
-
-
       Object.keys(formData).every((key) => {
-  console.log("Checking:", key, formData[key]);
+        console.log("Checking:", key, formData[key]);
 
-  const isValid = formInputPattern[key].test(
-    formData[key].toLowerCase()
-  );
+        const isValid = formInputPattern[key].test(formData[key].toLowerCase());
 
-  console.log("Valid:", isValid);
+        console.log("Valid:", isValid);
 
-  if (!isValid) {
-    console.log("Failed key:", key);
+        if (!isValid) {
+          console.log("Failed key:", key);
 
-    if (key === "name" || key === "city") {
-      addNotif(`Please fill the band ${key}.`);
-    } else if (key === "number_of_members") {
-      addNotif("Number invalid");
-    } else if (key.includes("name")) {
-      addNotif("Name invalid");
-    } else if (key.includes("phone")) {
-      console.log("PHONE NOTIFICATION");
-      addNotif("Phone invalid");
-    }
+          if (key === "name" || key === "city") {
+            addNotif(`Please fill the band ${key}.`);
+          } else if (key === "number_of_members") {
+            addNotif("Number invalid");
+          } else if (key.includes("name")) {
+            addNotif("Name invalid");
+          } else if (key.includes("phone")) {
+            console.log("PHONE NOTIFICATION");
+            addNotif("Phone invalid");
+          }
 
-    return false;
-  }
+          return false;
+        }
 
-  return true;
-}));
-      // !Object.keys(formData).every((key) => {
-      //   const isValid = formInputPattern[key].test(formData[key].toLowerCase());
+        return true;
+      })
+    );
+    // !Object.keys(formData).every((key) => {
+    //   const isValid = formInputPattern[key].test(formData[key].toLowerCase());
 
-      //   if (!isValid && addNotif) {
-      //     if (key === "name" || key === "city") {
-      //       addNotif(`Please fill the band ${key}.`);
-      //     } else if (key === "number_of_members") {
-      //       addNotif(
-      //         "Please fill the number of band members in your band with numbers.",
-      //       );
-      //     } else if (key.includes("name")) {
-      //       addNotif(
-      //         "Please fill the contact names in the correct format: They can only contain alphabets, numbers or whitespace. Also the required contact fields cannot be blank.",
-      //       );
-      //     } else if (key.includes("phone")) {
-      //       addNotif(
-      //         "Please fill the contact phone number in the correct format: They must be of 10 digits only. Also the required contact fields cannot be blank.",
-      //       );
-      //     } else if (key === "email_address") {
-      //       addNotif("Please fill the email in the correct format.");
-      //     } else if (key === "music_since") {
-      //       addNotif(
-      //         "Please fill the year of inception of the band correctly in YYYY format.",
-      //       );
-      //     }
-      //   }
-      //   return isValid;
-      // })
-      
+    //   if (!isValid && addNotif) {
+    //     if (key === "name" || key === "city") {
+    //       addNotif(`Please fill the band ${key}.`);
+    //     } else if (key === "number_of_members") {
+    //       addNotif(
+    //         "Please fill the number of band members in your band with numbers.",
+    //       );
+    //     } else if (key.includes("name")) {
+    //       addNotif(
+    //         "Please fill the contact names in the correct format: They can only contain alphabets, numbers or whitespace. Also the required contact fields cannot be blank.",
+    //       );
+    //     } else if (key.includes("phone")) {
+    //       addNotif(
+    //         "Please fill the contact phone number in the correct format: They must be of 10 digits only. Also the required contact fields cannot be blank.",
+    //       );
+    //     } else if (key === "email_address") {
+    //       addNotif("Please fill the email in the correct format.");
+    //     } else if (key === "music_since") {
+    //       addNotif(
+    //         "Please fill the year of inception of the band correctly in YYYY format.",
+    //       );
+    //     }
+    //   }
+    //   return isValid;
+    // })
+
     {
       return;
     }
@@ -163,39 +158,33 @@ const Register = () => {
   };
 
   return (
-    <div className={styles.RegisterWrapper}>
+    <div
+      className={styles.RegisterWrapper}
+      style={{ backgroundImage: `url(${RegisterBg})` }}
+    >
       <Header />
       <div className="register-container">
-        <p className={styles.eventInfo}>
-          <span className={styles.line}></span>
-          BITS PILANI • OASIS '26
-        </p>
-        <h1 className="styles.registerTitle">
-          <span className={styles.Regis}>REGIS</span>
-          <span className={styles.Tration}>TRATION</span>
-        </h1>
-
         <form
           ref={RegisterFormRef}
           onSubmit={handleFormSubmit}
           className={styles.RegisterForm}
         >
           <div className={styles.InfoWrapper}>
-            <BandInfo />
-            <ContactInfo />
-          </div>
-          <div className="register-actions">
-            <button type="button">Back</button>
-            <button type="submit">Register</button>
+            <div className={styles.leftcolumn}>
+              {" "}
+              <BandInfo />{" "}
+            </div>
+            <div className={styles.rightcolumn}>
+              <ContactInfo />
+              <p className={styles.submitText}>BY SUBMITTING THIS FORM, YOU AGREE TO OUR TERMS OF REBELLION
+                 AND NOISE POLICIES. WE ARE NOT RESPONSIBLE FOR BLOWN SPEAKERS.</p>
+              <button type="submit" className={styles.RegisterButton}>PROCEED TO REGISTER</button>
+            </div>
           </div>
         </form>
+        <img src={footerStrip} alt="footerStrip" className={styles.footerStrip}/>
       </div>
-       <Toaster
-
-        notification={notification}
-        setNotification={setNotification}
-
-      />
+      <Toaster notification={notification} setNotification={setNotification} />
     </div>
   );
 };

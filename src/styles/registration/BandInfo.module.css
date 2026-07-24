@@ -1,13 +1,35 @@
-.BandInfoTitle{
-    color: white;
-    font-weight: 600;
-    font-size: 2rem;
-}
 .BandInfoInputField{
 display: flex;
 flex-direction: column;
 gap: 1rem;
+margin-top: 2rem;
+width: 100%;
 }
 .BandInfoWrapper{
-    width: 40%;
+    width: 100%;
+}
+.BandInputRow1{
+    display: flex;
+    gap: 3rem;
+    width: 100%;
+    flex-shrink: 1;
+}
+
+.BandInputRow2{
+    display: flex;
+    width: 100%;
+    flex-shrink: 1;
+}
+
+.BandInputRow3{
+    display: flex;
+    gap: 3rem;
+    width: 100%;
+    flex-shrink: 1;
+}
+
+.BandInputRow4{
+    display: flex;
+     margin-top: 4rem;
+     width: 100%;
 }
