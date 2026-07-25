@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "../../styles/landing/About.module.css";
-import AboutBg from "../../assets/images/about/AboutBg.svg";
-import AboutTitle from "../../assets/images/about/AboutTitle.svg";
+import AboutBg from "../../assets/images/about/AboutBg.webp";
+import AboutTitle from "../../assets/images/about/AboutTitle.webp";
 
 const About=()=>{
     return(

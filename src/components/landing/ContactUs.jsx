@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "../../styles/landing/ContactUs.module.css";
-import ContactUsTitle from "../../assets/images/contactus/ContactUsTitle.svg";
+import ContactUsTitle from "../../assets/images/contactus/ContactUsTitle.webp";
 const ContactUs = () => {
   return (
     <div>

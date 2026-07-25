@@ -5,9 +5,9 @@ import ContactInfo from "../../components/registration/ContactInfo";
 import Header from "../../components/registration/Header";
 import styles from "../../styles/registration/Register.module.css";
 import Toaster from "../../components/registration/Toaster";
-import RegisterBg from "../../assets/images/register/RegisterBg.svg";
-import footerStrip from "../../assets/images/register/footerStrip.svg";
-const venues = ["Mumbai", "Bangalore", "Chennai", "Delhi", "Kolkata", "Online"];
+import RegisterBg from "../../assets/images/register/RegisterBg.webp";
+import footerStrip from "../../assets/images/register/footerStrip.webp";
+const venues = ["mumbai", "bangalore", "chennai", "delhi", "kolkata", "online"];
 const formInputPattern = {
   name: /^.+$/,
   email_address: /^[a-z0-9._\-+]+@[a-z0-9\-.]+$/,
@@ -42,62 +42,36 @@ const Register = () => {
     const baseLink = "https://prereg.bits-oasis.org";
 
     if (
-      Object.keys(formData).every((key) => {
-        console.log("Checking:", key, formData[key]);
+   
+    !Object.keys(formData).every((key) => {
+      const isValid = formInputPattern[key].test(formData[key].toLowerCase());
 
-        const isValid = formInputPattern[key].test(formData[key].toLowerCase());
-
-        console.log("Valid:", isValid);
-
-        if (!isValid) {
-          console.log("Failed key:", key);
-
-          if (key === "name" || key === "city") {
-            addNotif(`Please fill the band ${key}.`);
-          } else if (key === "number_of_members") {
-            addNotif("Number invalid");
-          } else if (key.includes("name")) {
-            addNotif("Name invalid");
-          } else if (key.includes("phone")) {
-            console.log("PHONE NOTIFICATION");
-            addNotif("Phone invalid");
-          }
-
-          return false;
+      if (!isValid && addNotif) {
+        if (key === "name" || key === "city") {
+          addNotif(`Please fill the band ${key}.`);
+        } else if (key === "number_of_members") {
+          addNotif(
+            "Please fill the number of band members in your band with numbers.",
+          );
+        } else if (key.includes("name")) {
+          addNotif(
+            "Please fill the contact names in the correct format: They can only contain alphabets, numbers or whitespace. Also the required contact fields cannot be blank.",
+          );
+        } else if (key.includes("phone")) {
+          addNotif(
+            "Please fill the contact phone number in the correct format: They must be of 10 digits only. Also the required contact fields cannot be blank.",
+          );
+        } else if (key === "email_address") {
+          addNotif("Please fill the email in the correct format.");
+        } else if (key === "music_since") {
+          addNotif(
+            "Please fill the year of inception of the band correctly in YYYY format.",
+          );
         }
-
-        return true;
-      })
-    );
-    // !Object.keys(formData).every((key) => {
-    //   const isValid = formInputPattern[key].test(formData[key].toLowerCase());
-
-    //   if (!isValid && addNotif) {
-    //     if (key === "name" || key === "city") {
-    //       addNotif(`Please fill the band ${key}.`);
-    //     } else if (key === "number_of_members") {
-    //       addNotif(
-    //         "Please fill the number of band members in your band with numbers.",
-    //       );
-    //     } else if (key.includes("name")) {
-    //       addNotif(
-    //         "Please fill the contact names in the correct format: They can only contain alphabets, numbers or whitespace. Also the required contact fields cannot be blank.",
-    //       );
-    //     } else if (key.includes("phone")) {
-    //       addNotif(
-    //         "Please fill the contact phone number in the correct format: They must be of 10 digits only. Also the required contact fields cannot be blank.",
-    //       );
-    //     } else if (key === "email_address") {
-    //       addNotif("Please fill the email in the correct format.");
-    //     } else if (key === "music_since") {
-    //       addNotif(
-    //         "Please fill the year of inception of the band correctly in YYYY format.",
-    //       );
-    //     }
-    //   }
-    //   return isValid;
-    // })
-
+      }
+      return isValid;
+    })
+ )
     {
       return;
     }

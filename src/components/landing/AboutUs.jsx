@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "../../styles/landing/AboutUs.module.css";
-import AboutUsTitle from "../../assets/images/aboutus/AboutUsTitle.svg";
+import AboutUsTitle from "../../assets/images/aboutus/AboutUsTitle.webp";
 const AboutUs = () => {
   return (
     <div>
