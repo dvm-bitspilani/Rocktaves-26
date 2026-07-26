@@ -30,3 +30,93 @@ bottom: 3%;
 left: 40%;
 width: 20%;
 }
+
+@media (max-width:1200px){
+
+.HomeWrapper{
+    height:100vh;
+    background-position:center;
+    background-size:cover;
+}
+
+.RocktaveLogo{
+    width:65%;
+    left:17.5%;
+    top:7%;
+}
+
+.RegisterNow{
+    width:38%;
+    left:31%;
+    top:42%;
+}
+
+.ScrollDown{
+    width:18%;
+    left:41%;
+    bottom:3%;
+}
+
+.FooterStrip{
+    width:100%;
+    bottom:0;
+}
+
+}
+
+
+@media (max-width:768px){
+
+.HomeWrapper{
+    height:100vh;
+    background-position:center;
+    background-size:cover;
+    overflow:hidden;
+}
+
+.RocktaveLogo{
+    width:78%;
+    left:50%;
+    top:8%;
+    transform:translateX(-50%);
+}
+
+.RegisterNow{
+    width:48%;
+    left:50%;
+    top:46%;
+    transform:translateX(-50%);
+}
+
+.ScrollDown{
+    width:28%;
+    left:50%;
+    bottom:4%;
+    transform:translateX(-50%);
+}
+
+.FooterStrip{
+    width:100%;
+    bottom:0;
+}
+
+}
+
+@media (max-width:480px){
+
+.RocktaveLogo{
+    width:85%;
+    top:9%;
+}
+
+.RegisterNow{
+    width:55%;
+    top:46%;
+}
+
+.ScrollDown{
+    width:34%;
+    bottom:4%;
+}
+
+}

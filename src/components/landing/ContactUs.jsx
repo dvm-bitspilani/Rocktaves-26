@@ -10,7 +10,7 @@ const ContactUs = () => {
         <span>Tanvi Gangakhedkar</span>
         <span>+91 9967851131</span>
       </div>
-      <div className={styles.ContactUs_1}>
+      <div className={styles.ContactUs_2}>
         <span>Ansh Achal Gupta</span>
         <span>+919669190002</span>
       </div>
@@ -19,3 +19,6 @@ const ContactUs = () => {
 };
 
 export default ContactUs;
+
+
+

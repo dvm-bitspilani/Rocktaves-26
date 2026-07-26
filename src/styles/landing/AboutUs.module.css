@@ -11,3 +11,80 @@ font-size: 1.5rem;
 line-height: 2rem;
 color: white;
 }
+
+
+
+@media (max-width: 1200px) {
+
+    .AboutUsTitle{
+        display:block;
+        width:50%;
+        margin:0 auto;
+    }
+
+    .AboutUsText{
+        width:75%;
+        margin:2.5rem auto 0;
+        padding:0;
+    }
+
+    .AboutUsText p{
+        font-size:1.45rem;
+        line-height:2.2rem;
+        text-align:center;
+    }
+
+}
+@media (max-width: 768px) {
+
+  .AboutUsTitle {
+    width: 70%;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .AboutUsText {
+    width: 90%;
+    padding: 2rem 0 0;
+    margin: auto;
+  }
+
+  .AboutUsText p {
+    font-size: 1.15rem;
+    line-height: 1.8rem;
+    text-align: center;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .AboutUsTitle {
+    width: 82%;
+  }
+
+  .AboutUsText {
+    width: 90%;
+    padding-top: 1.5rem;
+  }
+
+  .AboutUsText p {
+    font-size: 1rem;
+    line-height: 1.6rem;
+    text-align: justify;
+  }
+
+}
+
+@media (max-width: 360px) {
+
+  .AboutUsTitle {
+    width: 90%;
+  }
+
+  .AboutUsText p {
+    font-size: 0.95rem;
+    line-height: 1.45rem;
+  }
+
+}

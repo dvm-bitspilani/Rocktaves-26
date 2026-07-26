@@ -25,3 +25,74 @@
 .AboutTextWrapper span{
     color: #ED685D;
 }
+
+@media (max-width:1200px){
+
+.AboutWrapper{
+    height:auto;
+    min-height:100vh;
+    padding:4rem 0;
+    background-position:center;
+    background-size:cover;
+}
+
+.AboutTitle{
+    width:60%;
+    margin:0 0 2rem 3rem;
+}
+
+.AboutTextWrapper{
+    width:65%;
+    margin-left:3rem;
+}
+
+.AboutTextWrapper p{
+    font-size:1.15rem;
+    line-height:1.8rem;
+    padding-top:1.5rem;
+}
+
+}
+
+@media (max-width:768px){
+
+.AboutWrapper{
+    height:auto;
+    min-height:100vh;
+    padding:3rem 1.5rem 4rem;
+    background-position:center;
+    background-size:cover;
+}
+
+.AboutTitle{
+    display:block;
+    width:75%;
+    margin:0 auto 2rem;
+}
+
+.AboutTextWrapper{
+    width:100%;
+    margin:0;
+}
+
+.AboutTextWrapper p{
+    font-size:1rem;
+    line-height:1.7;
+    text-align:left;
+    padding-top:1.5rem;
+}
+
+}
+
+@media (max-width:480px){
+
+.AboutTitle{
+    width:85%;
+}
+
+.AboutTextWrapper p{
+    font-size:0.95rem;
+    line-height:1.6;
+}
+
+}

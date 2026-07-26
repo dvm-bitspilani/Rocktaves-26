@@ -24,3 +24,92 @@ color: white;
 .RulesList span{
     color: #BB2C2C;
 }
+
+
+
+
+
+@media (max-width: 1200px) {
+
+  .RulesWrapper{
+    min-height: 100vh;
+    height: auto;
+    padding: 4rem 0;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .RulesTitle{
+    width: 50%;
+    margin-top: 3rem;
+    margin-left: 3rem;
+  }
+
+  .RulesListWrapper{
+    width: 75%;
+    margin-left: 3rem;
+    margin-top: 2rem;
+  }
+
+  .RulesList li{
+    font-size: 1.15rem;
+    line-height: 1.8;
+    margin-bottom: 1.6rem;
+  }
+}
+
+
+@media (max-width: 768px) {
+
+  .RulesWrapper{
+    min-height: 100vh;
+    height: auto;
+    padding: 3rem 0 4rem;
+    overflow: visible;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .RulesTitle{
+    display: block;
+    width: 60%;
+    margin: 0 auto 2rem;
+  }
+
+  .RulesListWrapper{
+    width: 90%;
+    margin: 0 auto;
+    padding-left: 0;
+  }
+
+  .RulesList{
+    padding-left: 1.5rem;
+  }
+
+  .RulesList li{
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .RulesTitle{
+    width: 70%;
+  }
+
+  .RulesListWrapper{
+    width: 92%;
+  }
+
+  .RulesList{
+    padding-left: 1.2rem;
+  }
+
+  .RulesList li{
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 1.3rem;
+  }
+}

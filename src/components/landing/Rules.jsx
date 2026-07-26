@@ -18,7 +18,7 @@ const Rules = () => {
           allowed.
         </li>
         <li>
-          Bands based in cities where the preliminary bands are being hosted are 
+          Bands based in cities where the preliminary rounds are being hosted are 
           <span> not allowed</span> to register for the online round.
         </li>
         <li>

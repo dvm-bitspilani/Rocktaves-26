@@ -23,7 +23,6 @@ const Timeline = () => {
           style={{ backgroundImage: `url(${StepBg_1})` }}
         >
           <div className={styles.StepText_1}>
-        
             <p>
               Bands that register on the website will be provided with the
               details of the venue and time slot for the preliminary round in
@@ -40,7 +39,6 @@ const Timeline = () => {
           style={{ backgroundImage: `url(${StepBg_2})` }}
         >
           <div className={styles.StepText_2}>
-
             <p>
               Each band is expected to perform for 15-20 minutes at their chosen
               venue. One winner from each city and one from each online round
@@ -53,7 +51,6 @@ const Timeline = () => {
           style={{ backgroundImage: `url(${StepBg_3})` }}
         >
           <div className={styles.StepText_3}>
-            
             <p>
               The finalists will be invited to play at Oasis, the annual
               cultural fest of BITS Pilani. The winning band will walk away with

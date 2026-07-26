@@ -12,3 +12,57 @@
     width: 100%;
     bottom: 0%;
 }
+
+
+
+@media (max-width:1200px){
+
+    .KnowMoreWrapper{
+
+        height:auto;
+
+        min-height:100vh;
+
+        padding:4rem 0 8rem;
+
+        background-position:center;
+
+        background-size:cover;
+
+    }
+
+    .FooterStrip{
+
+        width:100%;
+
+        bottom:0;
+
+    }
+
+}
+
+
+@media (max-width: 768px) {
+  .KnowMoreWrapper {
+    height: auto;
+    min-height: 100vh;
+    padding: 3rem 0 6rem;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .FooterStrip {
+    width: 100%;
+    bottom: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .KnowMoreWrapper {
+    padding: 2rem 0 5rem;
+  }
+
+  .FooterStrip {
+    width: 100%;
+  }
+}

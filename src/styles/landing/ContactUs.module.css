@@ -18,3 +18,88 @@ color: white;
     flex-direction: column;
     gap: 0.5rem;
 }
+
+@media (max-width:1200px){
+
+    .ContactUsTitle{
+        display:block;
+        width:50%;
+        margin:5rem auto 0;
+    }
+
+    .ContactUsText{
+        width:80%;
+        margin:2.5rem auto 0;
+        padding:0;
+        display:flex;
+        justify-content:center;
+        gap:6rem;
+    }
+
+    .ContactUsText span{
+        font-size:1.35rem;
+        line-height:2rem;
+    }
+
+}
+@media (max-width: 768px) {
+
+  .ContactUsTitle {
+    width: 70%;
+    margin: 4rem auto 0;
+    display: block;
+  }
+
+  .ContactUsText {
+    width: 90%;
+    margin: auto;
+    padding: 2rem 0 0;
+    gap: 3rem;
+    justify-content: center;
+  }
+
+  .ContactUsText span {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .ContactUsTitle {
+    width: 82%;
+    margin-top: 3rem;
+  }
+
+  .ContactUsText {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    text-align: center;
+    padding-top: 1.5rem;
+  }
+
+  .ContactUsText span {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .ContactUs_1,
+  .ContactUs_2 {
+    align-items: center;
+  }
+
+}
+
+@media (max-width: 360px) {
+
+  .ContactUsTitle {
+    width: 90%;
+  }
+
+  .ContactUsText span {
+    font-size: 0.9rem;
+  }
+
+}
