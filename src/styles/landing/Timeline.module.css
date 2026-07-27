@@ -52,19 +52,21 @@
 @media (max-width:1200px){
 
 .TimelineWrapper{
-    height:100vh;
-    padding:3rem 2rem 5rem;
+    min-height:80vh;
+  height: fit-content;
+    padding:3rem 2rem 0rem;
 }
 
 .TimelineTitle{
     width:35%;
     padding:0;
-    margin-bottom:2rem;
+    margin-bottom:5rem;
 }
 
 .StepsWrapper{
     gap:1.5rem;
     margin-top:0;
+    height: 100%;
     align-items:flex-start;
 }
 
@@ -72,7 +74,9 @@
 .Step_2,
 .Step_3{
     width:32%;
+    height: 100%;
     background-size:100% auto;
+    aspect-ratio: 0.72;
 }
 
 .StepText_1{
@@ -97,12 +101,12 @@
 
 .TimelineWrapper{
     height:auto;
-    padding:2rem 1rem 4rem;
+    padding:2rem 1rem 1rem;
 }
 
 .TimelineTitle{
     width:50%;
-    margin:0 auto 2rem;
+    margin:0 auto 5rem;
     padding:0;
     display:block;
 }

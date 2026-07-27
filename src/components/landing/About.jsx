@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "../../styles/landing/About.module.css";
-import AboutBg from "../../assets/images/about/AboutBg.webp";
+import AboutBg from "../../assets/images/about/AboutBg.png";
 import AboutTitle from "../../assets/images/about/AboutTitle.webp";
 
 const About=()=>{

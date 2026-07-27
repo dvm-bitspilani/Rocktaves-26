@@ -34,21 +34,21 @@ color: white;
   .RulesWrapper{
     min-height: 100vh;
     height: auto;
-    padding: 4rem 0;
+    padding-bottom: 4rem ;
     background-size: cover;
     background-position: center;
   }
 
   .RulesTitle{
     width: 50%;
-    margin-top: 3rem;
+    margin-top: 1rem;
     margin-left: 3rem;
   }
 
   .RulesListWrapper{
     width: 75%;
     margin-left: 3rem;
-    margin-top: 2rem;
+    margin-top:0rem;
   }
 
   .RulesList li{
@@ -62,9 +62,9 @@ color: white;
 @media (max-width: 768px) {
 
   .RulesWrapper{
-    min-height: 100vh;
+    min-height: 90vh;
     height: auto;
-    padding: 3rem 0 4rem;
+    padding-bottom:0rem;
     overflow: visible;
     background-size: cover;
     background-position: center;
@@ -72,8 +72,8 @@ color: white;
 
   .RulesTitle{
     display: block;
-    width: 60%;
-    margin: 0 auto 2rem;
+    width: 80%;
+    margin: 0 auto 0rem;
   }
 
   .RulesListWrapper{

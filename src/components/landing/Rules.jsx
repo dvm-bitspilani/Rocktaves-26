@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "../../styles/landing/Rules.module.css";
-import RulesBg from "../../assets/images/rules/RulesBg.webp";
+import RulesBg from "../../assets/images/rules/RulesBg.png";
 import RulesTitle from "../../assets/images/rules/RulesTitle.webp";
 
 const Rules = () => {
