@@ -1,4 +1,3 @@
-import HeroBg from "../../assets/images/home/HeroBg.webp";
 import AboutBg from "../../assets/images/about/AboutBg.webp";
 import AboutTitle from "../../assets/images/about/AboutTitle.webp";
 import RulesBg from "../../assets/images/rules/RulesBg.webp";
@@ -14,7 +13,6 @@ import KnowMoreBg from "../../assets/images/knowmore/KnowMoreBg.webp";
 import FooterStrip from "../../assets/images/register/footerStrip.webp";
 
 const assets = [
-  HeroBg,
   AboutBg,
   AboutTitle,
   RulesBg,
