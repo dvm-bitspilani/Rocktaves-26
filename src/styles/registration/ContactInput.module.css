@@ -31,6 +31,21 @@
 .ContactHeading{
 color: #E35448;
 font-weight: 600;
+font-family: "Space Mono";
 font-size: 0.9rem;
 margin: 0;
+}
+
+
+@media (max-width:768px){
+
+  .ContactInputBoxRow{
+      flex-direction:column;
+  }
+
+  .ContactInputBox1,
+  .ContactInputBox2{
+      width:100%;
+  }
+
 }

@@ -1,6 +1,5 @@
 
 .InfoWrapper{
-    
     display: flex;
     width: 100%;
     height: 100%;
@@ -25,6 +24,20 @@
     display: flex;
     flex-direction: column;
 }
+.BandInfoTitleWrapper{
+width: 100%;
+}
+.ConatactInfoTitleWrapper{
+width: 100%;
+}
+.BandInfoTitle{
+margin-top: 5rem;
+width: 90%;
+}
+.ContactInfoTitle{
+      margin-top: 5rem;
+width: 90%;
+}
 .leftcolumn{
     width: 45%;
     height: 100%;
@@ -44,13 +57,101 @@
     background-color: #B53227;
     font-weight: 800;
     font-size: 2rem;
+    font-family: "Bebas Neue";
     color: #3D001A;
     border: none;
-    letter-spacing: -0.1rem;
+    letter-spacing: 0.1rem;
     border-bottom:10px solid #3D001A;
 }
 .footerStrip{
     width: 100%;
     position: absolute;
     bottom: 5%;
+}
+
+
+
+/* ================= TABLETS ================= */
+
+@media (max-width: 1200px) {
+
+  .InfoWrapper{
+    gap:2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .leftcolumn{
+    width:49%;
+  }
+
+  .rightcolumn{
+    width:49%;
+  }
+
+  .submitText{
+    width:100%;
+  }
+
+}
+
+@media (max-width:768px){
+
+.RegisterWrapper{
+    height:auto;
+    min-height:100vh;
+    padding:2rem 1rem 5rem;
+}
+
+.InfoWrapper{
+    flex-direction:column;
+    align-items:center;
+    gap:2rem;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.BandInfoTitleWrapper{
+width: 100%;
+}
+.ConatactInfoTitleWrapper{
+width: 100%;
+}
+.BandInfoTitle{
+margin-top: 5rem;
+width: 70%;
+}
+.ContactInfoTitle{
+margin-top: 5rem;
+width: 70%;
+}
+.leftcolumn,
+.rightcolumn{
+    width:95%;
+}
+
+.submitText{
+    width:100%;
+    margin-top:2rem;
+    font-size:.9rem;
+    line-height:1.4;
+}
+
+.RegisterButton{
+    width:100%;
+}
+
+.footerStrip{
+    position:relative;
+    bottom:auto;
+    margin-top:3rem;
+}
+
+}
+
+
+@media (max-width:420px){
+    .RegisterButton{
+        font-size: 1.5rem;
+    }
 }

@@ -11,14 +11,16 @@
    width: 37%;
 }
 .RulesListWrapper{
-    width: 52%;
+    width: 62%;
     padding-left: 4rem;
+    text-align: justify;
 }
 .RulesList li{
 font-family: "Chakra Petch";
-line-height: 2.2rem;
+line-height: 2.5rem;
 font-size: 1.5rem;
 color: white;
+padding-left: 0.5rem;
 }
 
 .RulesList span{
@@ -88,7 +90,7 @@ color: white;
 
   .RulesList li{
     font-size: 1rem;
-    line-height: 1.7;
+    line-height: 1.5rem;
     margin-bottom: 1.5rem;
   }
 }

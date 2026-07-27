@@ -7,6 +7,7 @@
   font-size: 2rem;
   font-weight: 800;
   margin-bottom: 1rem;
+  font-family: "Anton";
 }
 
 .VenueSelectgridContainer {
@@ -16,12 +17,13 @@
 }
 
 .VenueSelectgridItem {
+  font-family: "Anton";
  width: 100%;
   height: 3rem;
   background: #101010;
   border: 2px solid #E35448;
   color: white;
-  font-size: 1rem;
+  font-size: 1.5rem;
   text-transform: uppercase;
   cursor: pointer;
   transition: 0.25s ease;
@@ -37,4 +39,22 @@
 .selected {
   background: #B53227;
   color: white;
+}
+
+@media (max-width:768px){
+  .VenueSelectHeading{
+      font-size:1.4rem;
+  }
+
+  .VenueSelectgridContainer{
+      grid-template-columns:repeat(2,1fr);
+  }
+
+}
+
+@media (max-width:480px){
+  .VenueSelectgridContainer{
+      grid-template-columns:1fr;
+  }
+
 }

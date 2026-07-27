@@ -103,3 +103,10 @@ color: white;
   }
 
 }
+
+@media (max-height:768px)
+{.ContactUsWrapper{
+  overflow: visible;
+  padding-bottom: 10rem;}
+
+}

@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "../../styles/registration/Header.module.css";
-import RegisterTitle from "../../assets/images/register/RegisterTitle.webp";
+import RegisterTitle from "../../assets/images/register/RegisterTitle.png";
 function Header() {
   return (
   <div className={styles.HeaderWrapper}>

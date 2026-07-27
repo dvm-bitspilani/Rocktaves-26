@@ -9,8 +9,9 @@
 }
 .FooterStrip{
     position: absolute;
-    width: 100%;
     bottom: 0%;
+    width: 100%;
+
 }
 
 
@@ -18,21 +19,15 @@
 @media (max-width:1200px){
 
     .KnowMoreWrapper{
-
         height:auto;
-
         min-height:100vh;
-
         padding:0rem 0 10rem;
-
         background-position:center;
-
         background-size:cover;
 
     }
 
     .FooterStrip{
-
         width:100%;
         bottom:0;
 
@@ -64,4 +59,15 @@
   .FooterStrip {
     width: 100%;
   }
+}
+
+@media(max-height:768px){
+  .KnowMoreWrapper{
+    min-height: 50vh;
+    height: auto;
+  }
+.FooterStrip{
+  position: block;
+  padding-top: 10rem;
+}
 }

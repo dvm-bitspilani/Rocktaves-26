@@ -6,7 +6,10 @@ import Header from "../../components/registration/Header";
 import styles from "../../styles/registration/Register.module.css";
 import Toaster from "../../components/registration/Toaster";
 import RegisterBg from "../../assets/images/register/RegisterBg.webp";
+import BandInfoTitle from "../../assets/images/register/BandInfoTitle.png";
+import ContactInfoTitle from "../../assets/images/register/ContactInfoTitle.png";
 import footerStrip from "../../assets/images/register/footerStrip.webp";
+import BandInput from "../../components/registration/BandInput";
 const venues = ["mumbai", "bangalore", "chennai", "delhi", "kolkata", "online"];
 const formInputPattern = {
   name: /^.+$/,
@@ -145,10 +148,11 @@ const Register = () => {
         >
           <div className={styles.InfoWrapper}>
             <div className={styles.leftcolumn}>
-              {" "}
+              <div className={styles.BandInfoTitleWrapper}><img src={BandInfoTitle} alt=""  className={styles.BandInfoTitle}/></div>
               <BandInfo />{" "}
             </div>
             <div className={styles.rightcolumn}>
+               <div className={styles.ContactInfoTitleWrapper}><img src={ContactInfoTitle} alt="" className={styles.ContactInfoTitle}/></div>
               <ContactInfo />
               <p className={styles.submitText}>BY SUBMITTING THIS FORM, YOU AGREE TO OUR TERMS OF REBELLION
                  AND NOISE POLICIES. WE ARE NOT RESPONSIBLE FOR BLOWN SPEAKERS.</p>

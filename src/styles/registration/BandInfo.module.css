@@ -33,3 +33,32 @@ width: 100%;
      margin-top: 4rem;
      width: 100%;
 }
+
+@media (max-width:768px){
+
+    .BandInfoWrapper{
+        display: flex;
+        flex-direction: column;
+        
+        gap: 1rem;
+    }
+  .BandInputRow1,
+  .BandInputRow3{
+    display: flex;
+      flex-direction:column;
+      gap:1rem;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+  }
+
+  .BandInputRow2,
+  .BandInputRow4{
+    display: flex;
+      flex-direction:column;
+      align-items: center;
+      justify-content: center;
+      width:100%;
+  }
+
+}
