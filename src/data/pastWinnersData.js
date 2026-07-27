@@ -13,7 +13,7 @@ import AlbumStack2015 from "../assets/images/pastWinners/2015-2020/AlbumStack201
 // import Gallery3_2015 from "../assets/images/pastWinners/2015-2020/Gallery3.png";
 // import Gallery4_2015 from "../assets/images/pastWinners/2015-2020/Gallery4.png";
 // import CD2015 from "../assets/images/pastWinners/2015-2020/CD.png";
-import BandName2015 from "../assets/images/pastWinners/2015-2020/BandNameTitle2015.png";
+import BandName2015 from "../assets/images/pastWinners/2015-2020/BandNametitle2015.png";
 import DecadeTitle2015 from "../assets/images/pastWinners/2015-2020/DecadeTitle2015.png";
 
 
@@ -23,7 +23,7 @@ import AlbumStack2020 from "../assets/images/pastWinners/2020-2025/AlbumStack202
 // import Gallery3_2020 from "../assets/images/pastWinners/2020-2025/Gallery3.png";
 // import Gallery4_2020 from "../assets/images/pastWinners/2020-2025/Gallery4.png";
 // import CD2020 from "../assets/images/pastWinners/2020-2025/CD.png";
-import BandName2020 from "../assets/images/pastWinners/2020-2025/BandNameTitle2020.png";
+import BandName2020 from "../assets/images/pastWinners/2020-2025/BandNametitle2020.png";
 import DecadeTitle2020 from "../assets/images/pastWinners/2020-2025/DecadeTitle2020.png";
 export const pastWinnersData = [
   {
