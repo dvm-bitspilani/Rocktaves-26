@@ -1,3 +1,4 @@
+
 .PastWinnersWrapper {
     width: 100%;
     min-height: 100vh;
@@ -12,59 +13,66 @@
 }
 
 .PastWinnersTitle {
-    width: 50%;
-    max-width: 90%;
-    margin-bottom: 5rem;
-
+    width: clamp(260px, 40%, 650px);
+    margin-bottom: 4rem;
 }
 
 .CardContainer {
     width: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 3rem;
+    align-items: stretch;
+    gap: 2.5rem;
+    flex-wrap: nowrap;
 }
 
 .Card {
-    width: 22rem;
-    height: 32rem;
+    width: 30%;
+    aspect-ratio: 0.72;
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding: 2rem;
     box-sizing: border-box;
     cursor: pointer;
-    transition: transform 0.35s ease;
+    padding-left: 2rem;
+    transition: transform .35s ease;
 }
 
 .Card:hover {
     transform: translateY(-10px);
 }
 
-.CardDecade {
+.CardDecadeTop {
+    padding-top: 2.8rem;
+    padding-left: 2rem;
     margin: 0;
     color: white;
-    font-family: "Chakra Petch", sans-serif;
-    font-size: 2rem;
-    font-weight: 700;
-    text-align: center;
+    font-family: "Anton", sans-serif;
+    font-size: clamp(1.5rem, 2vw, 2.3rem);
+    letter-spacing: .15rem;
+}
+
+.CardDecadeBottom {
+    padding-left: 2rem;
+    padding-bottom: 2.8rem;
+    margin: 0;
+    color: white;
+    font-family: "Anton", sans-serif;
+    font-size: clamp(1.5rem, 2vw, 2.3rem);
+    letter-spacing: .15rem;
 }
 
 .AlbumStack {
     flex: 1;
-    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .AlbumStack img {
-    width: 90%;
-    max-width: 20rem;
+    width: 100%;
     height: auto;
     object-fit: contain;
     user-select: none;
@@ -75,93 +83,154 @@
     margin: 0;
     color: white;
     font-family: "Chakra Petch", sans-serif;
-    font-size: 1.7rem;
+    font-size: clamp(1.1rem, 1.5vw, 1.7rem);
     font-weight: 700;
     text-align: center;
 }
-@media (max-width: 1440px) {
 
-    .Card {
-        width: 20rem;
-        height: 29rem;
-    }
+/* ================== Laptop ================== */
 
-    .CardTitle {
-        font-size: 1.8rem;
-    }
+@media (max-width:1200px){
 
-    .CardBand {
-        font-size: 1.5rem;
-    }
-
-    .AlbumStack img {
-        max-width: 15rem;
-    }
+.PastWinnersWrapper{
+    padding:5rem 3rem;
 }
 
-@media (max-width: 1024px) {
-
-    .PastWinnersWrapper {
-        padding: 5rem 2rem;
-    }
-
-    .PastWinnersTitle {
-        width: 24rem;
-        margin-bottom: 4rem;
-    }
-
-    .CardContainer {
-        gap: 2rem;
-        flex-wrap: wrap;
-    }
-
-    .Card {
-        width: 18rem;
-        height: 26rem;
-    }
-
-    .CardTitle {
-        font-size: 1.5rem;
-    }
-
-    .CardBand {
-        font-size: 1.3rem;
-    }
-
-    .AlbumStack img {
-        max-width: 13rem;
-    }
+.PastWinnersTitle{
+    width:32%;
+    margin-bottom:3rem;
 }
 
-@media (max-width: 768px) {
+.CardContainer{
+    gap:1.5rem;
+}
 
-    .PastWinnersWrapper {
-        padding: 4rem 1rem;
-    }
+.Card{
+    width:32%;
+}
 
-    .PastWinnersTitle {
-        width: 18rem;
-    }
+.CardDecadeTop,
+.CardDecadeBottom{
+    padding-left:1.5rem;
+    font-size:1.8rem;
+}
 
-    .CardContainer {
-        flex-direction: column;
-    }
+.CardDecadeTop{
+    padding-top:2.2rem;
+}
 
-    .Card {
-        width: 95%;
-        max-width: 22rem;
-        height: 30rem;
-    }
+.CardDecadeBottom{
+    padding-bottom:2.2rem;
+}
 
-    .CardTitle {
-        font-size: 1.5rem;
-    }
+.AlbumStack img{
+    width:78%;
+}
 
-    .CardBand {
-        font-size: 1.4rem;
-    }
+}
 
-    .AlbumStack img {
-        max-width: 14rem;
-    }
+/* ================== Tablet ================== */
+
+@media (max-width:900px){
+
+.PastWinnersWrapper{
+    padding:4rem 2rem;
+}
+
+.PastWinnersTitle{
+    width:55%;
+    margin:0 auto 3rem;
+}
+
+.CardContainer{
+    flex-wrap:nowrap;
+    gap:2rem;
+}
+
+.Card{
+    width:45%;
+    max-width:320px;
+}
+
+.CardDecadeTop,
+.CardDecadeBottom{
+    font-size:1.6rem;
+    padding-left:1.3rem;
+}
+
+.AlbumStack img{
+    width:75%;
+}
+
+}
+
+/* ================== Mobile ================== */
+
+@media (max-width:768px){
+
+.PastWinnersWrapper{
+    padding:3rem 1rem;
+    background-size: contain;
+    background-repeat: repeat;
+}
+
+.PastWinnersTitle{
+    width:80%;
+    margin:4rem auto 4rem;
+}
+
+.CardContainer{
+    flex-direction:column;
+    align-items:center;
+    gap:2rem;
+}
+
+.Card{
+    width:92%;
+    max-width:360px;
+}
+
+.CardDecadeTop,
+.CardDecadeBottom{
+    font-size:1.5rem;
+    padding-left:1.2rem;
+}
+
+.CardDecadeTop{
+    padding-top:2rem;
+}
+
+.CardDecadeBottom{
+    padding-bottom:2rem;
+}
+
+.AlbumStack img{
+    width:100%;
+}
+
+}
+
+/* ================== Small Mobile ================== */
+
+@media (max-width:480px){
+
+.PastWinnersTitle{
+    width:95%;
+}
+
+.Card{
+    width:100%;
+}
+
+.CardDecadeTop,
+.CardDecadeBottom{
+    font-size:1.25rem;
+    letter-spacing:.08rem;
+    padding-left:1rem;
+}
+
+.AlbumStack img{
+    width:100%;
+}
+
 }

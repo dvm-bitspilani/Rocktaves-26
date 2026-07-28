@@ -55,7 +55,7 @@ const PastWinners = () => {
             style={{ backgroundImage: `url(${PastWinnersCardBg})` }}
             onClick={() => openWinner(winner)}
           >
-            <h2 className={styles.CardDecade}>
+            <h2 className={styles.CardDecadeTop}>
               {winner.decadetop}
             </h2>
 
@@ -66,7 +66,7 @@ const PastWinners = () => {
               />
             </div>
 
-            <h2 className={styles.CardDecade}>
+            <h2 className={styles.CardDecadeBottom}>
               {winner.decadebottom}
             </h2>
           </div>

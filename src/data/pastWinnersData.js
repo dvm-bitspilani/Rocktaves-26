@@ -28,7 +28,7 @@ import DecadeTitle2020 from "../assets/images/pastWinners/2020-2025/DecadeTitle2
 export const pastWinnersData = [
   {
     id: 1,
-     decadetop: "2015-2020",
+     decadebottom: "2015-2020",
     DecadeTitle: DecadeTitle2010,
     BandNameTitle: BandName2010,
     description: "Between 2015 and 2020, rising touring costs and new streaming algorithms pushed the Indian rock scene underground. While electronic and rap music dominated youth culture, traditional rock survived by evolving into a fiercely loyal subculture of metal and folk bands.",
@@ -39,7 +39,7 @@ export const pastWinnersData = [
 
   {
     id: 2,
-    decadebottom: "2015-2020",
+    decadetop: "2015-2020",
         DecadeTitle: DecadeTitle2015,
    BandNameTitle: BandName2015,
     description:
@@ -51,7 +51,7 @@ export const pastWinnersData = [
 
   {
     id: 3,
-    decadetop: "2020-2025",
+    decadebottom: "2020-2025",
         DecadeTitle: DecadeTitle2020,
      BandNameTitle: BandName2020,
     description: "Between 2015 and 2020, rising touring costs and new streaming algorithms pushed the Indian rock scene underground. While electronic and rap music dominated youth culture, traditional rock survived by evolving into a fiercely loyal subculture of metal and folk bands.",

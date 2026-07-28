@@ -2,7 +2,7 @@
     width: 100%;
 }
 .RegisterTitle{
-    margin-top: 3rem;
+    margin-top: 0rem;
     width: 100%;
 }
 @media(max-width:768px){
@@ -10,4 +10,9 @@
     width: 190%;
     margin-left: -45%;
 }
+}
+@media(max-width:480px){
+    .RegisterTitle{
+        /* margin-top: 2rem; */
+    }
 }

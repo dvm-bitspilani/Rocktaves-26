@@ -18,6 +18,22 @@
 
 }
  
+.BackButton {
+    width: 100%;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding-left: 2rem;
+    padding-top: 3rem;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.BackButton img {
+    width:3%;
+    height: 3%;
+    object-fit: contain;
+}
 .rightcolumn{
     width: 40%;
     height: 100%;
@@ -134,6 +150,13 @@ width: 70%;
 .rightcolumn{
     width:95%;
 }
+ .BackButton {
+        padding: 2rem 0 1rem 1.5rem;
+    }
+
+    .BackButton img {
+        width: 5%;
+    }
 
 .submitText{
     width:100%;
@@ -158,6 +181,13 @@ width: 70%;
 @media (max-width:420px){
     .RegisterButton{
         font-size: 1.5rem;
+    }
+      .BackButton {
+        padding: 1.5rem 0 1rem 1rem;
+    }
+
+    .BackButton img {
+        width: 8%;
     }
 }
 
