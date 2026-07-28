@@ -1,41 +1,41 @@
 @font-face {
     font-family: "Chakra Petch";
-    src: url("../assets/fonts/chakra_petch/ChakraPetch-Light.ttf") format("truetype");
+    src: url("../assets/fonts/Chakra_petch/ChakraPetch-Light.ttf") format("truetype");
     font-weight: 300;
 }
 
 @font-face {
     font-family: "Chakra Petch";
-    src: url("../assets/fonts/chakra_petch/ChakraPetch-Regular.ttf") format("truetype");
+    src: url("../assets/fonts/Chakra_petch/ChakraPetch-Regular.ttf") format("truetype");
     font-weight: 400;
 }
 
 @font-face {
     font-family: "Chakra Petch";
-    src: url("../assets/fonts/chakra_petch/ChakraPetch-Medium.ttf") format("truetype");
+    src: url("../assets/fonts/Chakra_petch/ChakraPetch-Medium.ttf") format("truetype");
     font-weight: 500;
 }
 
 @font-face {
     font-family: "Chakra Petch";
-    src: url("../assets/fonts/chakra_petch/ChakraPetch-SemiBold.ttf") format("truetype");
+    src: url("../assets/fonts/Chakra_petch/ChakraPetch-SemiBold.ttf") format("truetype");
     font-weight: 600;
 }
 
 @font-face {
     font-family: "Chakra Petch";
-    src: url("../assets/fonts/chakra_petch/ChakraPetch-Bold.ttf") format("truetype");
+    src: url("../assets/fonts/Chakra_petch/ChakraPetch-Bold.ttf") format("truetype");
     font-weight: 700;
 }
 
 @font-face {
     font-family: "Anton";
-    src: url("../assets/fonts/anton/Anton-Regular.ttf") format("truetype");
+    src: url("../assets/fonts/Anton/Anton-Regular.ttf") format("truetype");
     font-weight: 400;
 }
 @font-face {
     font-family: "Bebas Neue";
-    src: url("../assets/fonts/bebas_neue/BebasNeue-Regular.ttf") format("truetype");
+    src: url("../assets/fonts/Bebas_Neue/BebasNeue-Regular.ttf") format("truetype");
     font-weight: 400;
     font-style: normal;
 }
@@ -43,28 +43,28 @@
 
 @font-face {
     font-family: "Space Mono";
-    src: url("../assets/fonts/space_mono/SpaceMono-Regular.ttf") format("truetype");
+    src: url("../assets/fonts/Space_Mono/SpaceMono-Regular.ttf") format("truetype");
     font-weight: 400;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Space Mono";
-    src: url("../assets/fonts/space_mono/SpaceMono-Italic.ttf") format("truetype");
+    src: url("../assets/fonts/Space_Mono/SpaceMono-Italic.ttf") format("truetype");
     font-weight: 400;
     font-style: italic;
 }
 
 @font-face {
     font-family: "Space Mono";
-    src: url("../assets/fonts/space_mono/SpaceMono-Bold.ttf") format("truetype");
+    src: url("../assets/fonts/Space_Mono/SpaceMono-Bold.ttf") format("truetype");
     font-weight: 700;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Space Mono";
-    src: url("../assets/fonts/space_mono/SpaceMono-BoldItalic.ttf") format("truetype");
+    src: url("../assets/fonts/Space_Mono/SpaceMono-BoldItalic.ttf") format("truetype");
     font-weight: 700;
     font-style: italic;
 }
