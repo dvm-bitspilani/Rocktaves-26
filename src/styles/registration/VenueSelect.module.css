@@ -40,7 +40,11 @@
   background: #B53227;
   color: white;
 }
-
+@media(max-width:840px){
+  .VenueSelectHeading{
+    font-size: 1.8rem;
+  }
+}
 @media (max-width:768px){
   .VenueSelectHeading{
       font-size:1.4rem;

@@ -9,49 +9,49 @@ const Preloader = ({ onFinish }) => {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    let loaded = 0;
-    const total = assets.length;
-    const minimumTime = 1000;
-    const startTime = Date.now();
+  let loaded = 0;
+  const total = assets.length;
+  const minimumTime = 1000;
+  const startTime = Date.now();
 
-    const finishLoading = () => {
-      const elapsed = Date.now() - startTime;
-      const remaining = Math.max(0, minimumTime - elapsed);
+  const finishLoading = () => {
+    const elapsed = Date.now() - startTime;
+    const remaining = Math.max(0, minimumTime - elapsed);
 
-      setTimeout(() => {
-        gsap.to(preloaderRef.current, {
-          opacity: 0,
-          duration: 0.8,
-          ease: "power2.out",
-          onComplete: () => {
-            onFinish();
-          },
-        });
-      }, remaining);
+    setTimeout(() => {
+      gsap.to(preloaderRef.current, {
+        opacity: 0,
+        duration: 0.8,
+        ease: "power2.out",
+        onComplete: () => {
+          onFinish();
+        },
+      });
+    }, remaining);
+  };
+
+  if (total === 0) {
+    finishLoading();
+    return;
+  }
+
+  assets.forEach((src) => {
+    const img = new Image();
+
+    img.src = src;
+
+    img.onload = img.onerror = () => {
+      loaded++;
+
+      const percent = Math.round((loaded / total) * 100);
+      setProgress(percent);
+
+      if (loaded === total) {
+        finishLoading();
+      }
     };
-
-    if (total === 0) {
-      finishLoading();
-      return;
-    }
-
-    assets.forEach((src) => {
-      const img = new Image();
-
-      img.src = src;
-
-      img.onload = img.onerror = () => {
-        loaded++;
-
-        const percent = Math.round((loaded / total) * 100);
-        setProgress(percent);
-
-        if (loaded === total) {
-          finishLoading();
-        }
-      };
-    });
-  }, [onFinish]);
+  });
+}, [onFinish]);
   return (
     <div className={styles.preloader} ref={preloaderRef}>
       <div className={styles.content}>
@@ -59,13 +59,18 @@ const Preloader = ({ onFinish }) => {
 
         <div className={styles.equalizer}>
           {[0, 1, 2, 3, 4].map((i) => (
-            <VerticalBar key={i} active={progress >= (i + 1) * 20} />
+            <VerticalBar
+              key={i}
+              active={progress >= (i + 1) * 20}
+            />
           ))}
         </div>
 
         <p className={styles.percent}>{progress}%</p>
 
-        <p className={styles.loading}>Loading Assets...</p>
+        <p className={styles.loading}>
+          Loading Assets...
+        </p>
       </div>
     </div>
   );

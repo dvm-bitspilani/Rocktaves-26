@@ -1,142 +1,168 @@
-.TimelineWrapper{
-    position: relative;
-    height: 100vh;
-    width: 100%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    overflow: hidden;
+.TimelineWrapper {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
 }
 
-.TimelineTitle{
-    padding: 4.5rem 0rem 0rem 5rem;
-    width: 30%;
+.TimelineTitle {
+  padding: 4.5rem 0rem 0rem 5rem;
+  width: 30%;
 }
-.StepsWrapper{
-    display: flex;
-    justify-content: center;
-    margin-top: 3rem;
-    flex: 1;
-    gap: 4rem;
-    width: 100%;
-    height: 100%;
+.StepsWrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+  flex: 1;
+  gap: 4rem;
+  width: 100%;
+  height: 100%;
 }
-.StepsWrapper p{
-    font-size: 1.3rem;
-    font-weight: 400;
-    color: white;
+.StepsWrapper p {
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: white;
 }
-.Step_1,.Step_2,.Step_3{
-    width: 25%;
-    height: 100%;
-    background-size: contain;
-    background-position: top center;
-    background-repeat: no-repeat;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-}
-.StepText_1{
-    margin-top: 5rem;
-    padding: 2rem 2.5rem;
-}
-.StepText_2{
-    margin-top: 8rem;
-    padding: 2rem 2.5rem;
-}
-.StepText_3{
-    margin-top: 8rem;
-    padding: 2rem 2.5rem;
-}
-
-
-@media (max-width:1200px){
-
-.TimelineWrapper{
-    min-height:80vh;
-  height: fit-content;
-    padding:3rem 2rem 0rem;
-}
-
-.TimelineTitle{
-    width:35%;
-    padding:0;
-    margin-bottom:5rem;
-}
-
-.StepsWrapper{
-    gap:1.5rem;
-    margin-top:0;
-    height: 100%;
-    align-items:flex-start;
-}
-
 .Step_1,
 .Step_2,
-.Step_3{
-    width:32%;
+.Step_3 {
+  width: 25%;
+  height: 100%;
+  background-size: contain;
+  background-position: top center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.StepText_1 {
+  margin-top: 5rem;
+  padding: 2rem 2.5rem;
+}
+.StepText_2 {
+  margin-top: 8rem;
+  padding: 2rem 2.5rem;
+}
+.StepText_3 {
+  margin-top: 8rem;
+  padding: 2rem 2.5rem;
+}
+@media (max-width: 1400px) {
+  .StepsWrapper p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 1260px) {
+  .StepText_1 {
+    padding-top: 0.2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  .StepText_2 {
+    padding-top: 0;
+  }
+  .StepText_3 {
+    padding-top: 0;
+    margin-top: 7rem;
+  }
+}
+@media (max-width: 1200px) {
+  .TimelineWrapper {
+    min-height: 80vh;
+    height: fit-content;
+    padding: 3rem 2rem 0rem;
+  }
+
+  .TimelineTitle {
+    width: 35%;
+    padding: 0;
+    margin-bottom: 5rem;
+  }
+
+  .StepsWrapper {
+    gap: 1.5rem;
+    margin-top: 0;
     height: 100%;
-    background-size:100% auto;
+    align-items: flex-start;
+  }
+
+  .Step_1,
+  .Step_2,
+  .Step_3 {
+    width: 32%;
+    height: 100%;
+    background-size: 100% auto;
     aspect-ratio: 0.72;
-}
+  }
 
-.StepText_1{
-    margin-top:22%;
-    padding:1.2rem;
-}
+  .StepText_1 {
+    margin-top: 22%;
+    padding: 1.2rem;
+  }
 
-.StepText_2,
-.StepText_3{
-    margin-top:30%;
-    padding:1.2rem;
-}
+  .StepText_2,
+  .StepText_3 {
+    margin-top: 30%;
+    padding: 1.2rem;
+  }
 
+  .StepsWrapper p {
+    font-size: 1rem;
+    line-height: 1.45;
+  }
+}
+@media(max-width:860px){
 .StepsWrapper p{
-    font-size:1rem;
-    line-height:1.45;
+font-size: 0.9rem;
 }
-
 }
+@media (max-width: 768px) {
+  .TimelineWrapper {
+    height: auto;
+    padding: 2rem 1rem 1rem;
+  }
 
-@media (max-width:768px){
+  .TimelineTitle {
+    width: 50%;
+    margin: 0 auto 5rem;
+    padding: 0;
+    display: block;
+  }
 
-.TimelineWrapper{
-    height:auto;
-    padding:2rem 1rem 1rem;
+  .StepsWrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .Step_1,
+  .Step_2,
+  .Step_3 {
+    width: 90%;
+    max-width: 340px;
+    aspect-ratio: 0.72;
+    background-size: 100% 100%;
+  }
+
+  .StepText_1,
+  .StepText_2,
+  .StepText_3 {
+    margin-top: 42%;
+    padding: 0 1.5rem;
+    text-align: center;
+  }
+
+  .StepsWrapper p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
 }
-
-.TimelineTitle{
-    width:50%;
-    margin:0 auto 5rem;
-    padding:0;
-    display:block;
-}
-
-.StepsWrapper{
-    flex-direction:column;
-    align-items:center;
-    gap:2rem;
-}
-
-.Step_1,
-.Step_2,
-.Step_3{
-    width:90%;
-    max-width:340px;
-    aspect-ratio:0.72;
-    background-size:100% 100%;
-}
-
-.StepText_1,
-.StepText_2,
-.StepText_3{
-    margin-top:42%;
-    padding:0 1.5rem;
-    text-align:center;
-}
-
-.StepsWrapper p{
-    font-size:.95rem;
-    line-height:1.6;
-}
-
+@media (max-height: 768px) {
+  .TimelineWrapper {
+    min-height: 100vh;
+    height: fit-content;
+  }
 }

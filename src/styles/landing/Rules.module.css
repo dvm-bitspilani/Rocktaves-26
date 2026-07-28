@@ -1,6 +1,7 @@
 .RulesWrapper{
  position: relative;
-    height: 100vh;
+    min-height: 100vh;
+    height: fit-content;
     width: 100%;
     overflow: hidden;
     background-size: cover;
@@ -113,5 +114,12 @@ padding-left: 0.5rem;
     font-size: 0.9rem;
     line-height: 1.6;
     margin-bottom: 1.3rem;
+  }
+}
+
+@media(max-height:768px){
+  .RulesWrapper{
+    min-height: 120vh;
+    height: fit-content;
   }
 }

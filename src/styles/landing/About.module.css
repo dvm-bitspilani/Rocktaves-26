@@ -6,7 +6,7 @@
     overflow: hidden;
 }
 .AboutTitle{
-    margin-top: 10rem;
+    margin-top: 5rem;
     margin-left: 5rem;
     width: 70%;
 
@@ -98,4 +98,10 @@ padding-bottom: 1rem;
     line-height:1.6;
 }
 
+}
+@media(max-height:768px){
+    .AboutWrapper{
+        min-height: 110vh;
+        height: fit-content;
+    }
 }

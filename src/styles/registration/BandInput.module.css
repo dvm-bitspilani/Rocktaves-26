@@ -30,6 +30,11 @@
         font-size: 0.8rem;
     }
 }
+@media(max-width:810px){
+    .BandInputBoxHeading{
+        font-size: 0.7rem;
+    }
+}
 @media (max-width:768px){
 
   .BandInputBox{
