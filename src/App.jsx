@@ -24,10 +24,42 @@
 
 // export default App;
 
-import { useState } from "react";
-import "./App.css";
+// import { useState } from "react";
+// import "./App.css";
 
+// import { Routes, Route } from "react-router-dom";
+
+// import Landing from "./pages/landing/landing";
+// import Register from "./pages/register/register";
+// import PastWinnersPage from "./pages/pastWinners/PastWinnersPage";
+
+// import Preloader from "./components/preloader/Preloader";
+
+// function App() {
+//   const [loading, setLoading] = useState(true);
+
+//   return (
+//     <>
+//       {loading ? (
+//         <Preloader onFinish={() => setLoading(false)} />
+//       ) : (
+//         <Routes>
+//           <Route path="/" element={<Landing />} />
+//           <Route path="/register" element={<Register />} />
+//           <Route path="/past-winners" element={<PastWinnersPage />} />
+//         </Routes>
+//       )}
+//     </>
+//   );
+// }
+
+// export default App;
+
+
+import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
+
+import "./App.css";
 
 import Landing from "./pages/landing/landing";
 import Register from "./pages/register/register";
@@ -38,18 +70,21 @@ import Preloader from "./components/preloader/Preloader";
 function App() {
   const [loading, setLoading] = useState(true);
 
+  if (loading) {
+    return (
+      <Preloader setIsLoading={setLoading} />
+    );
+  }
+
   return (
-    <>
-      {loading ? (
-        <Preloader onFinish={() => setLoading(false)} />
-      ) : (
-        <Routes>
-          <Route path="/" element={<Landing />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/past-winners" element={<PastWinnersPage />} />
-        </Routes>
-      )}
-    </>
+    <Routes>
+      <Route path="/" element={<Landing />} />
+      <Route path="/register" element={<Register />} />
+      <Route
+        path="/past-winners"
+        element={<PastWinnersPage />}
+      />
+    </Routes>
   );
 }
 

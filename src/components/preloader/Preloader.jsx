@@ -1,79 +1,102 @@
-import React, { useEffect, useRef, useState } from "react";
-import gsap from "gsap";
+import { useEffect, useRef, useState } from "react";
 import styles from "./Preloader.module.css";
+import assetList from "./assetList";
 import VerticalBar from "./VerticalBar";
-import assets from "./assetList";
+import { useGSAP } from "@gsap/react";
 
-const Preloader = ({ onFinish }) => {
-  const preloaderRef = useRef(null);
-  const [progress, setProgress] = useState(0);
+export default function Preloader({setIsLoading,onFinish,}) {
+  const hasRun = useRef(false);
 
-  useEffect(() => {
-  let loaded = 0;
-  const total = assets.length;
-  const minimumTime = 1000;
-  const startTime = Date.now();
+  const [percentageLoaded, setPercentageLoaded] = useState(0);
 
-  const finishLoading = () => {
-    const elapsed = Date.now() - startTime;
-    const remaining = Math.max(0, minimumTime - elapsed);
+  const numAssets =
+    assetList.images.length +
+    assetList.videos.length;
 
-    setTimeout(() => {
-      gsap.to(preloaderRef.current, {
-        opacity: 0,
-        duration: 0.8,
-        ease: "power2.out",
-        onComplete: () => {
-          onFinish();
-        },
-      });
-    }, remaining);
+  const { contextSafe } = useGSAP();
+useEffect(() => {
+  console.log("Preloader Mounted");
+}, []);
+  const cacheAssets = async () => {
+    const timeout = setTimeout(() => {
+      setIsLoading(false);
+    }, 10000);
+
+    const handleLoaded = (callback) => {
+      setPercentageLoaded((prev) => prev + 100 / numAssets);
+      callback();
+    };
+
+    const promises = [
+      ...assetList.images.map(
+        (src) =>
+          new Promise((resolve, reject) => {
+            const img = new Image();
+
+            img.src = src;
+
+            img.onload = () =>
+              handleLoaded(() => resolve(img));
+
+            img.onerror = (err) =>
+              handleLoaded(() => reject(err));
+          })
+      ),
+
+      ...assetList.videos.map(
+        (src) =>
+          new Promise((resolve, reject) => {
+            const video =
+              document.createElement("video");
+
+            video.src = src;
+            video.preload = "auto";
+
+            video.onloadeddata = () =>
+              handleLoaded(() => resolve(video));
+
+            video.onerror = (err) =>
+              handleLoaded(() => reject(err));
+          })
+      ),
+    ];
+
+    await Promise.all(promises).catch(() => {});
+
+    contextSafe(() => {clearTimeout(timeout);
+
+setTimeout(() => {
+  if (onFinish) {
+    onFinish();
+  } else if (setIsLoading) {
+    setIsLoading(false);
+  }
+}, 2000);
+    })();
   };
 
-  if (total === 0) {
-    finishLoading();
-    return;
-  }
+  useEffect(() => {
+    if (hasRun.current) return;
 
-  assets.forEach((src) => {
-    const img = new Image();
+    hasRun.current = true;
 
-    img.src = src;
+    cacheAssets();
 
-    img.onload = img.onerror = () => {
-      loaded++;
+    window.scrollTo(0, 0);
+  }, []);
 
-      const percent = Math.round((loaded / total) * 100);
-      setProgress(percent);
-
-      if (loaded === total) {
-        finishLoading();
-      }
-    };
-  });
-}, [onFinish]);
   return (
-    <div className={styles.preloader} ref={preloaderRef}>
-      <div className={styles.content}>
-        <h1 className={styles.title}>ROCKTAVES</h1>
-
-        <div className={styles.equalizer}>
-          {[0, 1, 2, 3, 4].map((i) => (
+    <div className={styles.preloader}>
+      <div className={styles.equalizer}>
+        {Array(5)
+          .fill(null)
+          .map((_, i) => (
             <VerticalBar
               key={i}
-              active={progress >= (i + 1) * 20}
+              setOn={percentageLoaded >= (i + 1) * 20}
             />
           ))}
-        </div>
-
-        <p className={styles.percent}>{progress}%</p>
-
-        <p className={styles.loading}>
-          Loading Assets...
-        </p>
       </div>
     </div>
   );
-};
-
-export default Preloader;
+}

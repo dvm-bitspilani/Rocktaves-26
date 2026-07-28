@@ -1,43 +1,47 @@
-import React, { useEffect, useRef } from "react";
-import gsap from "gsap";
+import { useEffect, useRef } from "react";
 import styles from "./Preloader.module.css";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
-const VerticalBar = ({ active }) => {
-  const barRef = useRef(null);
+function randInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
-  useEffect(() => {
-    if (active) {
-      gsap.to(barRef.current, {
+export default function VerticalBar({ setOn }) {
+  const activeBarRef = useRef(null);
+
+  const { contextSafe } = useGSAP();
+
+  const animateBar = contextSafe(() => {
+    const duration = randInt(3, 10) / 10;
+
+    if (setOn) {
+      gsap.to(activeBarRef.current, {
         height: "100%",
-        duration: 0.5,
-        ease: "power2.out",
+        duration,
       });
       return;
     }
 
-    let tween;
+    gsap.to(activeBarRef.current, {
+      height: `${randInt(10, 90)}%`,
+      duration,
+      onComplete: animateBar,
+    });
+  });
 
-    const animate = () => {
-      tween = gsap.to(barRef.current, {
-        height: `${Math.random() * 80 + 10}%`,
-        duration: Math.random() * 0.4 + 0.2,
-        ease: "power1.inOut",
-        onComplete: animate,
-      });
-    };
-
-    animate();
-
-    return () => {
-      if (tween) tween.kill();
-    };
-  }, [active]);
+  useEffect(() => {
+    animateBar();
+  });
 
   return (
     <div className={styles.verticalBar}>
-      <div className={styles.activeBar} ref={barRef}></div>
+      <div className={styles.activeBarWrapper}>
+        <div
+          ref={activeBarRef}
+          className={styles.activeBar}
+        />
+      </div>
     </div>
   );
-};
-
-export default VerticalBar;
+}

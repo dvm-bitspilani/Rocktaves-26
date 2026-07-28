@@ -12,20 +12,24 @@ import RegisterTitle from "../../assets/images/register/RegisterTitle.webp";
 import KnowMoreBg from "../../assets/images/knowmore/KnowMoreBg.webp";
 import FooterStrip from "../../assets/images/register/footerStrip.webp";
 
-const assets = [
-  AboutBg,
-  AboutTitle,
-  RulesBg,
-  RulesTitle,
-  TimelineBg,
-  TimelineTitle,
-  StepBg1,
-  StepBg2,
-  StepBg3,
-  RegisterBg,
-  RegisterTitle,
-  KnowMoreBg,
-  FooterStrip,
-];
+const assetList = {
+  images: [
+    AboutBg,
+    AboutTitle,
+    RulesBg,
+    RulesTitle,
+    TimelineBg,
+    TimelineTitle,
+    StepBg1,
+    StepBg2,
+    StepBg3,
+    RegisterBg,
+    RegisterTitle,
+    KnowMoreBg,
+    FooterStrip,
+  ],
 
-export default assets;
+  videos: [],
+};
+
+export default assetList;
