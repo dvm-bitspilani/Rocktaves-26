@@ -69,31 +69,45 @@ const WinnerDetails = ({ data }) => {
 
   const containerRef = useRef(null);
   const imageRef = useRef(null);
-
+  const textRef = useRef(null);
   useEffect(() => {
-    if (!containerRef.current || !imageRef.current) return;
+  if (!containerRef.current || !imageRef.current || !textRef.current) return;
 
-    const ctx = gsap.context(() => {
-      gsap.to(imageRef.current, {
-        z:40,
-        scale:1,
-        x: -window.innerWidth*0.2,
-        rotateY:0,
+  const ctx = gsap.context(() => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: "top top",
+        end: "+=600",
+        scrub: true,
+        pin: true,
+        markers: true,
+      },
+    });
+
+    // Animate both at the same time
+    tl.to(
+      imageRef.current,
+      {
+        z: 40,
+        scale: 1,
+        x: -window.innerWidth * 0.2,
+        rotateY: 0,
         ease: "none",
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top top",
-          end: "+=600",
-          scrub: true,
-          pin: true,
-          markers: true,
-        },
-      });
-    }, containerRef);
+      },
+      0 // start at time 0
+    ).to(
+      textRef.current,
+      {
+        y: -window.innerWidth * 0.5,
+        ease: "none",
+      },
+      0 // start at the same time
+    );
+  }, containerRef);
 
-    return () => ctx.revert();
-  }, []);
-
+  return () => ctx.revert();
+}, []);
   if (!data) return null;
 
   return (
@@ -112,7 +126,7 @@ const WinnerDetails = ({ data }) => {
       </button>
 
       <div className={styles.WinnerDetailsContentWrapper}>
-        <div className={styles.WinnerDetailsLeftSection}>
+        <div ref={textRef} className={styles.WinnerDetailsLeftSection}>
           <img
             src={data.BandNameTitle}
             alt="Band Title"
