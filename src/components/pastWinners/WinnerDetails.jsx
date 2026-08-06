@@ -151,6 +151,24 @@ const WinnerDetails = ({ data }) => {
             alt="Album Stack"
             className={styles.AlbumStack}
           />
+          <img
+            ref={imageRef}
+            src={data.albumStack}
+            alt="Album Stack"
+            className={styles.AlbumStack}
+          />
+          <img
+            ref={imageRef}
+            src={data.albumStack}
+            alt="Album Stack"
+            className={styles.AlbumStack}
+          />
+          <img
+            ref={imageRef}
+            src={data.albumStack}
+            alt="Album Stack"
+            className={styles.AlbumStack}
+          />
         </div>
       </div>
     </div>
