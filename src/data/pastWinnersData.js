@@ -1,8 +1,8 @@
 import AlbumStack2010 from "../assets/images/pastWinners/2010-2015/AlbumStack20102015.png";
 import Album2010_1 from "../assets/images/pastWinners/2010-2015/Album2010_1.png";
-// import Gallery2_2010 from "../assets/images/pastWinners/2010-2015/Gallery2.png";
-// import Gallery3_2010 from "../assets/images/pastWinners/2010-2015/Gallery3.png";
-// import Gallery4_2010 from "../assets/images/pastWinners/2010-2015/Gallery4.png";
+import Album2010_2 from "../assets/images/pastWinners/2010-2015/Album2010_2.png";
+import Album2010_3 from "../assets/images/pastWinners/2010-2015/Album2010_3.png";
+import Album2010_4 from "../assets/images/pastWinners/2010-2015/Album2010_4.png";
 // import CD2010 from "../assets/images/pastWinners/2010-2015/CD.png";
 import BandName2010 from "../assets/images/pastWinners/2010-2015/BandNameTitle2010.png";
 import DecadeTitle2010 from "../assets/images/pastWinners/2010-2015/DecadeTitle2010.png";
@@ -32,7 +32,10 @@ export const pastWinnersData = [
     DecadeTitle: DecadeTitle2010,
     BandNameTitle: BandName2010,
     description: "Between 2015 and 2020, rising touring costs and new streaming algorithms pushed the Indian rock scene underground. While electronic and rap music dominated youth culture, traditional rock survived by evolving into a fiercely loyal subculture of metal and folk bands.",
-    albumStack: Album2010_1,
+    albumStack1: Album2010_1,
+       albumStack2: Album2010_2,
+          albumStack3: Album2010_3,
+             albumStack4: Album2010_4,
     // gallery: [Gallery1_2010, Gallery2_2010, Gallery3_2010, Gallery4_2010],
     // cd: CD2010,
   },

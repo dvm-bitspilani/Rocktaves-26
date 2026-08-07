@@ -1,124 +1,227 @@
 .WinnerDetailsWrapper {
-    width: 100%;
-    min-height: 100vh;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    box-sizing: border-box;
-    perspective: 1000px;
+  width: 100%;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6rem 8%;
+  box-sizing: border-box;
+  perspective: 1000px;
 }
 
 .WinnerDetailsContentWrapper {
-    width: 100%;
-    max-width: 1600px;
-     padding: 0rem 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-
-.BackButton {
-    width: 100%;
-    height: 100%;
-    border: none;
-    background: transparent;
-    cursor: pointer;
-    padding-left: 2rem;
-    padding-top: 3rem;
-    display: flex;
-    justify-content: flex-start;
-}
-
-.BackButton img {
-    width:3%;
-    height: 3%;
-    object-fit: contain;
+  width: 100%;
+  max-width: 1600px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
 }
 
 .WinnerDetailsLeftSection {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
+  width: 42%;
+  display: flex;
+  flex-direction: column;
 }
-.BandName{
-    width: 100%;
+
+.BackButton {
+  width: 550px;
+  height: 55px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  position: absolute;
+  top: 3%;
+  left: -15%;
+  padding: 0;
+  margin-bottom: 3rem;
+}
+
+.BackButton img {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+}
+
+.Title {
+  color: #ffffff;
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 5rem;
+  font-weight: 700;
+  line-height: 0.95;
+  text-transform: uppercase;
+  margin: 0;
 }
 
 .Decade {
-    margin-top: 1.8rem;
-    color: #E32626;
-    font-family: "Chakra Petch", sans-serif;
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
+  margin-top: 1.8rem;
+  color: #e32626;
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
 }
 
 .Description {
-    margin-top: 2rem;
-    max-width: 600px;
-    color: rgba(255,255,255,0.85);
-    font-family: "Inter", sans-serif;
-    font-size: 1.05rem;
-    line-height: 1.9;
+  margin-top: 2rem;
+  max-width: 600px;
+  color: rgba(255, 255, 255, 0.85);
+  font-family: "Inter", sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.9;
 }
 
 .ScrollMore {
-    margin-top: 4rem;
-    display: flex;
-    align-items: center;
-    gap: 15px;
+  margin-top: 4rem;
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
 .ScrollMore span {
-    color: #FFFFFF;
-    font-family: "Chakra Petch", sans-serif;
-    font-size: 1rem;
-    letter-spacing: 0.15em;
+  color: #ffffff;
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.15em;
 }
 .ScrollMore img {
-    width: 24px;
+  width: 24px;
 }
 .WinnerDetailsRightSection {
-    width: 48%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 48%;
+  height: 80svh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .AlbumStack {
-    width: 520px;
-    height: 520px;
-    transform: perspective(1200px) rotateY(-60deg);
-    transform-style: preserve-3d;
-    transform-origin: center center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform: perspective(1200px) rotateY(-60deg);
+  transform-style: preserve-3d;
+  transform-origin: center center;
 }
-.AlbumStack img {
-    position: absolute;
-    transform-origin: left center;
-    width: 270px;
+.img1 {
+  position: absolute;
+  width: 50vw;
+  height: 45vw;
+  transition: 0.4s ease;
+  z-index: 1;
+}
+.img2 {
+  position: absolute;
+  width: 35vw;
+  height: 35vw;
+  transition: 0.4s ease;
+}
+.img3 {
+  position: absolute;
+  width: 40vw;
+  height: 30vw;
+  transition: 0.4s ease;
+}
+.img4 {
+  position: absolute;
+  width: 40vw;
+  height: 25vw;
+  transition: 0.4s ease;
+}
 
-    transition: 0.4s ease;
+.img1 {
+  left: -35vw;
+  top: 2.5vw;
+  z-index: 4;
+    top: 50%;
+  transform: translateY(-50%);
+}
+.img2 {
+  left: -2vw;
+  top: 3.5vw;
+  z-index: 3;
+    top: 50%;
+  transform: translateY(-50%);
+}
+.img3 {
+  left: 8vw;
+  top: 4.5vw;
+  z-index: 2;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.img4 {
+  left: 13vw;
+  top: 5.5vw;
+  z-index: 1;
+    top: 50%;
+  transform: translateY(-50%);
+}
+.circle {
+  width: 35vw;
+  height: 35vw;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  opacity: 0;
+  position: absolute;
+  z-index: 500;
+}
+.smallcircle {
+  height: 2vw;
+  width: 2vw;
+  position: absolute;
+  background-color: #430a0a;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  opacity: 0;
+  left: 50%;
+  border-radius: 50%;
+  z-index: 1000;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+.smallcircle h4 {
+  opacity: 0;
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+  color: white;
+  z-index: 1000;
+}
+.smallcircle p {
+  opacity: 0;
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-family: "Space Mono";
+  font-size: 0.5rem;
+  z-index: 1000;
 }
 .Album1 {
-    left: 0;
-    top: 70px;
-    z-index: 4;
+  left: 0;
+  top: 70px;
+  z-index: 4;
 }
 .Album2 {
-    left: 70px;
-    top: 45px;
-    z-index: 3;
+  left: 70px;
+  top: 45px;
+  z-index: 3;
 }
 .Album3 {
-    left: 140px;
-    top: 20px;
-    z-index: 2;
+  left: 140px;
+  top: 20px;
+  z-index: 2;
 }
 .Album4 {
-    left: 210px;
-    top: 0;
-    z-index: 1;
+  left: 210px;
+  top: 0;
+  z-index: 1;
 }
