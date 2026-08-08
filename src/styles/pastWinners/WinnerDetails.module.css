@@ -7,9 +7,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 6rem 8%;
+  padding: 0 8% 6rem 5%;
   box-sizing: border-box;
   perspective: 1000px;
+  overflow: hidden;
 }
 
 .WinnerDetailsContentWrapper {
@@ -22,9 +23,26 @@
 }
 
 .WinnerDetailsLeftSection {
-  width: 42%;
+  width: 50%;
   display: flex;
   flex-direction: column;
+}
+
+.BandName {
+  display: block;
+  width: 100%;
+  max-width: 620px;
+  height: auto;
+  object-fit: contain;
+}
+
+.DecadeTitle {
+  display: block;
+  width: 42%;
+  max-width: 230px;
+  height: auto;
+  margin-top: 1.1rem;
+  object-fit: contain;
 }
 
 .BackButton {
@@ -46,57 +64,25 @@
   object-fit: contain;
 }
 
-.Title {
-  color: #ffffff;
-  font-family: "Chakra Petch", sans-serif;
-  font-size: 5rem;
-  font-weight: 700;
-  line-height: 0.95;
-  text-transform: uppercase;
-  margin: 0;
-}
-
-.Decade {
-  margin-top: 1.8rem;
-  color: #e32626;
-  font-family: "Chakra Petch", sans-serif;
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-}
-
 .Description {
   margin-top: 2rem;
-  max-width: 600px;
-  color: rgba(255, 255, 255, 0.85);
-  font-family: "Inter", sans-serif;
-  font-size: 1.05rem;
-  line-height: 1.9;
-}
-
-.ScrollMore {
-  margin-top: 4rem;
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.ScrollMore span {
-  color: #ffffff;
+  max-width: 700px;
+  color :white;
   font-family: "Chakra Petch", sans-serif;
-  font-size: 1rem;
-  letter-spacing: 0.15em;
+  font-size: 1.5rem;
+  line-height: 1.5;
 }
-.ScrollMore img {
-  width: 24px;
-}
+
 .WinnerDetailsRightSection {
   width: 48%;
   height: 80svh;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  padding-top: 6rem;
 }
+
 .AlbumStack {
   position: relative;
   width: 100%;
@@ -105,123 +91,234 @@
   transform-style: preserve-3d;
   transform-origin: center center;
 }
+
 .img1 {
   position: absolute;
   width: 50vw;
   height: 45vw;
-  transition: 0.4s ease;
-  z-index: 1;
+  left: -35vw;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 4;
 }
+
 .img2 {
   position: absolute;
   width: 35vw;
   height: 35vw;
-  transition: 0.4s ease;
+  left: -2vw;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
 }
+
 .img3 {
   position: absolute;
   width: 40vw;
   height: 30vw;
-  transition: 0.4s ease;
+  left: 8vw;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
 }
+
 .img4 {
   position: absolute;
   width: 40vw;
   height: 25vw;
-  transition: 0.4s ease;
+  left: 13vw;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
 }
 
-.img1 {
-  left: -35vw;
-  top: 2.5vw;
-  z-index: 4;
-    top: 50%;
-  transform: translateY(-50%);
-}
-.img2 {
-  left: -2vw;
-  top: 3.5vw;
-  z-index: 3;
-    top: 50%;
-  transform: translateY(-50%);
-}
-.img3 {
-  left: 8vw;
-  top: 4.5vw;
-  z-index: 2;
-  top: 50%;
-  transform: translateY(-50%);
-}
-.img4 {
-  left: 13vw;
-  top: 5.5vw;
-  z-index: 1;
-    top: 50%;
-  transform: translateY(-50%);
-}
+/* ── VINYL CIRCLE ───────────────────────────────────────────── */
+
 .circle {
-  width: 35vw;
-  height: 35vw;
+  position: absolute;
+  width: 40vw;
+  height: 40vw;
+  left: -12vw;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  margin-left: -20vw;
+  margin-top: -20vw;
   border-radius: 50%;
   opacity: 0;
-  position: absolute;
-  z-index: 500;
+  pointer-events: none;
+  z-index: 100;
 }
+
+/* ── LABEL CIRCLE ───────────────────────────────────────────── */
+
 .smallcircle {
-  height: 2vw;
+  position: relative;
   width: 2vw;
-  position: absolute;
-  background-color: #430a0a;
-  transform: translate(-50%, -50%);
+  height: 2vw;
+  left: -12vw;
   top: 50%;
-  opacity: 0;
-  left: 50%;
+  background-color: #430a0a;
   border-radius: 50%;
-  z-index: 1000;
+  opacity: 0;
+  overflow: hidden;
   box-sizing: border-box;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 0.9rem;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.smallcircle h4 {
+  margin: 0;
+  padding: 0;
+  font-size: 1.5rem;
+  font-family: "Space Mono", monospace;
+  color: white;
+  
+}
+
+.smallcircle p {
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-family: "Space Mono", monospace;
+  font-size: 1rem;
+  white-space: nowrap;
+}
+
+/* ── TEXT BLOCKS INSIDE LABEL ───────────────────────────────── */
+
+.circleTextTop,
+.circleTextBottom {
+  display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.9rem;
+  width: 100%;
+}
+
+.circleTextBottom {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+}
+
+/* ── ALBUM WIPE ─────────────────────────────────────────────── */
+
+.swipeImg {
+  position: absolute;
+  width: 45vw;
+  height: 45vw;
+  left: -35vw;
+  top: 50%;
+  margin-top: -22.5vw;
+  clip-path: inset(100% 0 0 0);
   overflow: hidden;
 }
-.smallcircle h4 {
-  opacity: 0;
-  margin: 0;
-  padding: 0;
-  font-size: 1rem;
+
+.swipeImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ── CIRCLE WIPE ────────────────────────────────────────────── */
+
+.swipeCircle {
+  position: absolute;
+  width: 40vw;
+  height: 40vw;
+  left: -12vw;
+  top: 50%;
+  margin-left: -20vw;
+  margin-top: -20vw;
+  border-radius: 50%;
+  overflow: hidden;
+  clip-path: inset(100% 0 0 0);
+}
+
+.swipeCircle img {
+  position: absolute;
+  width: 142%;
+  height: 142%;
+  top: 50%;
+  left: 50%;
+  margin-left: -71%;
+  margin-top: -71%;
+  object-fit: cover;
+}
+
+/* ── SIDE PANELS ────────────────────────────────────────────── */
+
+.side {
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  position: absolute;
+  top: 100%;
+}
+
+.left {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+ padding-left: 2vw;
+}
+
+.left img {
+  width: 25vw;
+  height: 25vw;
+     padding-left: 2vw;
+   padding-right: 1vw;
+   object-fit: contain;
+}
+
+.left p {
+  width: 25vw;
   color: white;
-  z-index: 1000;
+  font-family: "Chakra Petch";
+   padding-left: 3vw;
+   padding-right: 1vw;
+  
 }
-.smallcircle p {
-  opacity: 0;
-  margin: 0;
-  padding: 0;
+
+.left h4 {
+  color: #b53227;
+   padding-left: 3vw;
+   font-family: "Sedgwick Ave Display";
+   font-size: 2rem;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: 50svh;
+}
+
+.right img {
+ width: 25vw;
+  height: 25vw;
+     padding-left: 1vw;
+   padding-right: 2vw;
+}
+
+.right p {
+  width: 25vw;
   color: white;
-  font-family: "Space Mono";
-  font-size: 0.5rem;
-  z-index: 1000;
+  font-family: "Chakra Petch";
+    padding-left: 1vw;
+   padding-right: 2vw;
 }
-.Album1 {
-  left: 0;
-  top: 70px;
-  z-index: 4;
-}
-.Album2 {
-  left: 70px;
-  top: 45px;
-  z-index: 3;
-}
-.Album3 {
-  left: 140px;
-  top: 20px;
-  z-index: 2;
-}
-.Album4 {
-  left: 210px;
-  top: 0;
-  z-index: 1;
+
+.right h4 {
+  color: #b53227;
+  font-family: "Sedgwick Ave Display";
+  font-size: 2rem;
+  margin-right: 16vw;
 }
