@@ -36,6 +36,7 @@
   object-fit: contain;
 }
 
+
 .DecadeTitle {
   display: block;
   width: 42%;
@@ -132,7 +133,6 @@
   z-index: 1;
 }
 
-/* ── VINYL CIRCLE ───────────────────────────────────────────── */
 
 .circle {
   position: absolute;
@@ -148,7 +148,6 @@
   z-index: 100;
 }
 
-/* ── LABEL CIRCLE ───────────────────────────────────────────── */
 
 .smallcircle {
   position: relative;
@@ -188,7 +187,7 @@
   white-space: nowrap;
 }
 
-/* ── TEXT BLOCKS INSIDE LABEL ───────────────────────────────── */
+
 
 .circleTextTop,
 .circleTextBottom {
@@ -208,7 +207,6 @@
   width: 80%;
 }
 
-/* ── ALBUM WIPE ─────────────────────────────────────────────── */
 
 .swipeImg {
   position: absolute;
@@ -227,7 +225,6 @@
   object-fit: cover;
 }
 
-/* ── CIRCLE WIPE ────────────────────────────────────────────── */
 
 .swipeCircle {
   position: absolute;
@@ -253,7 +250,7 @@
   object-fit: cover;
 }
 
-/* ── SIDE PANELS ────────────────────────────────────────────── */
+
 
 .side {
   display: flex;
@@ -321,4 +318,190 @@
   font-family: "Sedgwick Ave Display";
   font-size: 2rem;
   margin-right: 16vw;
+}
+
+.mobileWrapper{
+  display: none;
+}
+
+.mBandName {
+  width: 80%;
+  height: auto;
+  object-fit: contain;
+}
+.mTitle{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.mDecadeTitle{
+  width: 50%;
+  height: auto;
+  object-fit: contain;
+}
+.mDescription{
+  width: 90%;
+  padding-left: 1rem;
+  font-family: "Chakra Petch";
+  font-size: 1.5rem;
+}
+.mbottom{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  width: 100%;
+}
+.mleft{
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;;
+  justify-content: center;
+  align-items: center;
+}
+.mleft img{
+width: 80%;
+height: 80%;
+}
+.mleft h4{
+  color: #b53227;
+   font-family: "Sedgwick Ave Display";
+   font-size: 3rem;
+   margin-bottom: 2rem;
+}
+.mleft p{
+  width: 80%;
+  color: white;
+  font-size: 1rem;
+}
+
+.mright{
+  display: flex;
+  flex-direction: column;
+  width: 100%;;
+  justify-content: center;
+  align-items: center;
+}
+.mright img{
+width: 80%;
+height: 80%;
+}
+.mright h4{
+  color: #b53227;
+   font-family: "Sedgwick Ave Display";
+   font-size: 3rem;
+   margin-bottom: 2rem;
+}
+.mright p{
+  width: 80%;
+  color: white;
+  font-size: 1rem;
+}
+.middle{
+  position: relative;
+  margin-top: 3rem;
+  display: flex;
+  width:100%;
+    justify-content: center;
+}.mrect {
+  width: 90%;
+  z-index: 1;
+  aspect-ratio: 1;       /* ← forces square */
+  object-fit: cover;     /* ← crops to fill */
+}
+
+.mcircle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  border-radius: 50%;
+  width: 80%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  animation: spin 3s linear infinite;
+}
+
+.msmallcircle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #430a0a;
+  width: 50%;
+  aspect-ratio: 1;       /* ← was height: 50% which doesn't work */
+  z-index: 3;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+    gap: clamp(0.3rem, 3vw, 2rem); 
+}
+@keyframes spin {
+  from {
+    transform: translate(-50%,-50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%,-50%) rotate(360deg); 
+  }}
+/* 
+.msmallcircle{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background-color: #430a0a;
+  width: 50%;
+  height: 50%;
+  z-index: 3;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+  object-fit: cover;
+  gap: 2rem;
+} */
+
+
+
+.msmallcircle h4 {
+  margin: 0;
+  padding: 0;
+  font-size: clamp(0.9rem, 5vw, 2.5rem); 
+  font-family: "Space Mono", monospace;
+  color: white;
+  
+}
+
+.msmallcircle p {
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-family: "Space Mono", monospace;
+  font-size: clamp(0.9rem, 3vw, 2.5rem); 
+  white-space: nowrap;
+}
+@media(max-width:768px){
+
+  .WinnerDetailsWrapper{
+    display: none;
+    visibility: hidden;
+  }
+  .mobileWrapper{
+    display: flex;
+    width: 100vw;
+    height: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+  }
+  
 }

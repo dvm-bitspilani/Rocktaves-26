@@ -7,32 +7,51 @@ import PastWinnersBg from "../../assets/images/pastWinners/PastWinnersBg.png";
 import PastWinnersTitle from "../../assets/images/pastWinners/PastWinnersTitle.png";
 import PastWinnersCardBg from "../../assets/images/pastWinners/PastWinnersCardBg.png";
 import PastWinnersCardBg1 from "../../assets/images/pastWinners/PastWinnersCardBg1.png";
-
 import { pastWinnersData } from "../../data/pastWinnersData.js";
 
 import Preloader from "../../components/preloader/Preloader";
 
-const PastWinners = () => {
+const MoreWinners = ({
+  selectedWinner,
+  setSelectedWinner,
+}) => {
   const navigate = useNavigate();
 
   const [loading, setLoading] = useState(false);
-  const [selectedWinner, setSelectedWinner] = useState(null);
 
   const openWinner = (winner) => {
+    console.log("Clicked winner:", winner);
+    console.log("Clicked winner ID:", winner.id);
+
+    // Update parent immediately
     setSelectedWinner(winner);
+
+    // Show preloader
     setLoading(true);
   };
 
-  if (loading) {
+  const handlePreloaderComplete = () => {
+    console.log("Preloader finished");
+    console.log("Navigating with ID:", selectedWinner?.id);
+
+    if (!selectedWinner) {
+      console.error("No winner selected");
+      return;
+    }
+
+    setLoading(false);
+
+    navigate("/past-winners", {
+      state: {
+        id: selectedWinner.id,
+      },
+    });
+  };
+
+  if (loading && selectedWinner) {
     return (
       <Preloader
-        setIsLoading={() => {
-          navigate("/past-winners", {
-            state: {
-              id: selectedWinner.id,
-            },
-          });
-        }}
+        setIsLoading={handlePreloaderComplete}
       />
     );
   }
@@ -40,7 +59,9 @@ const PastWinners = () => {
   return (
     <div
       className={styles.PastWinnersWrapper}
-      style={{ backgroundImage: `url(${PastWinnersBg})` }}
+      style={{
+        backgroundImage: `url(${PastWinnersBg})`,
+      }}
     >
       <img
         src={PastWinnersTitle}
@@ -53,7 +74,9 @@ const PastWinners = () => {
           <div
             key={winner.id}
             className={styles.Card}
-            style={{ backgroundImage: index ===1? `url(${PastWinnersCardBg1})`:`url(${PastWinnersCardBg})`, }}
+            style={{
+              backgroundImage: index ===1? `url(${PastWinnersCardBg1})`:`url(${PastWinnersCardBg})`,
+            }}
             onClick={() => openWinner(winner)}
           >
             <h2 className={styles.CardDecadeTop}>
@@ -77,4 +100,4 @@ const PastWinners = () => {
   );
 };
 
-export default PastWinners;
+export default MoreWinners;
