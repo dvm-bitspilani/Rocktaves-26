@@ -101,6 +101,39 @@ const Register = () => {
       return;
     }
 
+//  const submitData = {};
+// for (const key in formData) {
+//   const val = formData[key].toLowerCase().trim();
+//   if (val !== "") {
+//     submitData[key] = val;
+//   }
+// }
+// submitData.phone = submitData.phone1;
+// const submitData = {};
+// for (const key in formData) {
+//   const val = formData[key].trim();
+//   if (val !== "") {
+//     submitData[key] = key === "venue" ? val : val.toLowerCase();
+//   }
+// }
+const submitData = {
+  name: formData.name.trim(),
+  city: formData.city.trim(),
+  email_address: formData.email_address.trim(),
+  phone: formData.phone1.trim(),              // API wants "phone", not "phone1"
+  music_since: formData.music_since.trim(),
+  number_of_members: parseInt(formData.number_of_members, 10),  // must be integer
+  venue: formData.venue.trim(),
+  name1: formData.name1.trim(),
+  name2: formData.name2.trim(),
+  phone2: formData.phone2.trim(),
+};
+
+// Only add optional fields if filled
+if (formData.name3?.trim()) submitData.name3 = formData.name3.trim();
+if (formData.phone3?.trim()) submitData.phone3 = formData.phone3.trim();
+
+console.log("Sending to API:", JSON.stringify(submitData, null, 2));
     axios
       .post(
         `${baseLink}${
@@ -108,7 +141,8 @@ const Register = () => {
             ? "/RoctavesOnlineReg/"
             : "/RoctavesOfflineReg/"
         }`,
-        formData,
+
+      { ...formData, phone: formData.phone1 }, 
         {
           headers: {
             "Content-Type": "application/json",
@@ -116,6 +150,7 @@ const Register = () => {
         },
       )
       .then((response) => {
+        console.log("Response:", JSON.stringify(response.data, null, 2)); 
         if (addNotif) {
           if (response.data.status === "1") {
             addNotif("You've been successfully registered for Rocktaves 2026.");
