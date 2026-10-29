@@ -9,7 +9,7 @@ import StepBg1 from "../../assets/images/timeline/StepBg_1.webp";
 import StepBg2 from "../../assets/images/timeline/StepBg_2.webp";
 import StepBg3 from "../../assets/images/timeline/StepBg_3.webp";
 import RegisterBg from "../../assets/images/register/RegisterBg.webp";
-import RegisterTitle from "../../assets/images/register/RegisterTitle.webp";
+import RegisterTitle from "../../assets/images/register/RegisterTitle.png";
 import KnowMoreBg from "../../assets/images/knowmore/KnowMoreBg.webp";
 import FooterStrip from "../../assets/images/register/footerStrip.webp";
 import BackArrow from "../../assets/images/register/BackArrow.png";
