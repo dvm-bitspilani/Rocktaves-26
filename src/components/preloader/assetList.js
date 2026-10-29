@@ -12,7 +12,7 @@ import RegisterBg from "../../assets/images/register/RegisterBg.webp";
 import RegisterTitle from "../../assets/images/register/RegisterTitle.png";
 import KnowMoreBg from "../../assets/images/knowmore/KnowMoreBg.webp";
 import FooterStrip from "../../assets/images/register/footerStrip.webp";
-import FooterStrip1 from "../../assets/images/home/footerStrip.webp";
+import FooterStrip1 from "../../assets/images/home/FooterStrip.webp";
 import FooterStrip2 from "../../assets/images/register/footerStrip.webp";
 import BackArrow from "../../assets/images/register/BackArrow.png";
 import BandInfoTitle from "../../assets/images/register/BandInfoTitle.png";
