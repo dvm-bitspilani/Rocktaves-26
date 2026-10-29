@@ -11,18 +11,12 @@ import { pastWinnersData } from "../../data/pastWinnersData.js";
 
 import Preloader from "../../components/preloader/Preloader";
 
-const MoreWinners = ({
-  selectedWinner,
-  setSelectedWinner,
-}) => {
+const MoreWinners = ({ selectedWinner, setSelectedWinner }) => {
   const navigate = useNavigate();
 
   const [loading, setLoading] = useState(false);
 
   const openWinner = (winner) => {
-    console.log("Clicked winner:", winner);
-    console.log("Clicked winner ID:", winner.id);
-
     // Update parent immediately
     setSelectedWinner(winner);
 
@@ -31,9 +25,6 @@ const MoreWinners = ({
   };
 
   const handlePreloaderComplete = () => {
-    console.log("Preloader finished");
-    console.log("Navigating with ID:", selectedWinner?.id);
-
     if (!selectedWinner) {
       console.error("No winner selected");
       return;
@@ -49,19 +40,13 @@ const MoreWinners = ({
   };
 
   if (loading && selectedWinner) {
-    return (
-      <Preloader
-        setIsLoading={handlePreloaderComplete}
-      />
-    );
+    return <Preloader setIsLoading={handlePreloaderComplete} />;
   }
 
   return (
     <div
       className={styles.PastWinnersWrapper}
-      style={{
-        backgroundImage: `url(${PastWinnersBg})`,
-      }}
+      style={{ backgroundImage: `url(${PastWinnersBg})` }}
     >
       <img
         src={PastWinnersTitle}
@@ -70,31 +55,48 @@ const MoreWinners = ({
       />
 
       <div className={styles.CardContainer}>
-        {pastWinnersData.map((winner,index) => (
-          <div
-            key={winner.id}
-            className={styles.Card}
-            style={{
-              backgroundImage: index ===1? `url(${PastWinnersCardBg1})`:`url(${PastWinnersCardBg})`,
-            }}
-            onClick={() => openWinner(winner)}
-          >
-            <h2 className={styles.CardDecadeTop}>
-              {winner.decadetop}
-            </h2>
+        {pastWinnersData.map((winner, index) => {
+          // Desktop: second card uses CardBg1. Mobile: every card uses CardBg.
+          const desktopBg =
+            index === 1
+              ? `url(${PastWinnersCardBg1})`
+              : `url(${PastWinnersCardBg})`;
+          const mobileBg = `url(${PastWinnersCardBg})`;
 
-            <div className={styles.AlbumStack}>
-              <img
-                src={winner.albumStack}
-                alt="Album Stack"
-              />
+          return (
+            <div
+              key={winner.id}
+              className={`${styles.Card} ${
+                index === 1 ? styles.SecondCard : ""
+              }`}
+              style={{
+                "--desktop-bg": desktopBg,
+                "--mobile-bg": mobileBg,
+              }}
+              onClick={() => openWinner(winner)}
+            >
+              <h2
+                className={`${styles.CardDecadeTop} ${
+                  index === 1 ? styles.CardMiddleTop : ""
+                }`}
+              >
+                {winner.decadetop}
+              </h2>
+
+              <div className={styles.AlbumStack}>
+                <img src={winner.albumStack} alt="Album Stack" />
+              </div>
+
+              <h2
+                className={`${styles.CardDecadeBottom} ${
+                  index === 1 ? styles.CardMiddleBottom : ""
+                }`}
+              >
+                {winner.decadebottom}
+              </h2>
             </div>
-
-            <h2 className={styles.CardDecadeBottom}>
-              {winner.decadebottom}
-            </h2>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );

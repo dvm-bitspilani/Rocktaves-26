@@ -90,6 +90,7 @@ export const pastWinnersData = [
     
     id: 2,
      decadetop: "2021-2018",
+      decadebottom: "2021-2018",
     DecadeTitle: DecadeTitle2010,
     BandNameTitle: BandName2010,
     description: "Between 2015 and 2020, rising touring costs and new streaming algorithms pushed the Indian rock scene underground. While electronic and rap music dominated youth culture, traditional rock survived by evolving into a fiercely loyal subculture of metal and folk bands.",
@@ -158,9 +159,9 @@ export const pastWinnersData = [
         description:"Parikrama is a rock band from Delhi, India, formed in 1991.",
         trackDescription:'Released in 2019, "Tears Of The Wizard" is a notable track by Parikrama.',
         aboutDescription: "Parikrama is one of India's well-known rock bands.",
-        leftImg:"",
+        leftImg:Middle17,
         middleImg:Middle17,
-        rightImg:"",
+        rightImg:Middle17,
       },{id:2,
         bandName: "Highway69",
         track: "Disturbed",
@@ -170,7 +171,7 @@ export const pastWinnersData = [
         bandNameTitle: BandName2010,
         leftImg:Left16,
         middleImg:Middle16,
-        rightImg:"",
+        rightImg:Left16,
       }, 
       {id:3,
         bandName: "Polly Wants a Cracker",
@@ -181,7 +182,7 @@ export const pastWinnersData = [
         bandNameTitle: BandName2010,
         leftImg:Left15,
         middleImg:Middle15,
-        rightImg:"",
+        rightImg:Left15,
       } 
     ]
     }

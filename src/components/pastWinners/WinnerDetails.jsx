@@ -199,9 +199,6 @@ const WinnerDetails = ({ data }) => {
       }
 
       // ── Phase 3+: Side panels for EACH band ───────────────
-      // Each band's side panels scroll up through the viewport.
-      // Band 0 starts at position 3 (right after vinyl appears).
-      // Each subsequent band starts at its wipe position.
 
       bands.forEach((band, i) => {
         const sideEl = sideRefs.current[i];
@@ -457,101 +454,84 @@ const WinnerDetails = ({ data }) => {
         ))}
       </div>
 
-      {/* <div className={styles.mobileWrapper}>
+      {/* ── MOBILE VIEW ─────────────────────────────────────── */}
+      <div className={styles.mobileWrapper}>
+        <button
+          className={styles.mBackButton}
+          onClick={() => navigate("/")}
+          aria-label="Back"
+        >
+          <img src={BackArrow} alt="Back" />
+        </button>
+
         <div className={styles.mTitle}>
-          {" "}
-          <img
-            src={data.BandNameTitle}
-            alt="Band Title"
-            className={styles.mBandName}
-          />
-          <img
-            src={data.DecadeTitle}
-            alt="Decade Title"
-            className={styles.mDecadeTitle}
-          />
+          {/* "Parikrama: Still Spinning" title only belongs to the first decade */}
+          {data.id === 1 && (
+            <img
+              src={data.BandNameTitle}
+              alt="Band Title"
+              className={styles.mBandName}
+            />
+          )}
+          {data.id === 1 && (
+            <img
+              src={data.DecadeTitle}
+              alt="Decade Title"
+              className={styles.mDecadeTitle}
+            />
+          )}
         </div>
-        <p className={styles.mDescription}>{data.description}</p>
-        <div className={styles.mbottom}>
-          <div className={styles.mright}>
-            <img src={SideImage_2} alt="" />
-            <h4>About</h4>
-            <p>
-              Parikrama is a rock band from Delhi, India, formed in 1991 in
-              Delhi. The band is considered to be one of Asia's biggest rock
-              groups. It's known for its high-energy live performances and has
-              released many singles in its 3 decade long career.
-            </p>
-          </div>
-          <div className={styles.middle}>
-            <img src={baseImg} alt="baseImg" className={styles.mrect} />
-            <img src={baseImg} className={styles.mcircle} alt="" />
-            <div className={styles.msmallcircle}>
-              <div className={styles.mcircletext}>
+        {data.id === 1 && (
+          <p className={styles.mDescription}>{data.description}</p>
+        )}
+
+        {bands.map((band) => {
+          const bandImg = band.middleImg || band.albumStack?.[3] || baseImg;
+          return (
+            <div className={styles.mbottom} key={`mobile-${band.id}`}>
+              {/* NEW: band name heading */}
+              <div className={styles.mBandHeader}>
+                <p className={styles.mBandLabel}>Band Name :</p>
+                <h2 className={styles.mBandHeading}>{band.bandName}</h2>
+              </div>
+
+              <div className={styles.mright}>
+                <img src={band.rightImg || SideImage_2} alt="" />
+                <h4>About</h4>
                 <p>
-                  Track:
-                  <br />
-                  fwff
+                  {band.about || band.aboutDescription || "Band description."}
                 </p>
-                <h4>bandname</h4>
-                <p>Released:</p>
+              </div>
+
+              <div className={styles.middle}>
+                <img src={bandImg} alt="" className={styles.mrect} />
+                <img src={bandImg} alt="" className={styles.mcircle} />
+                <div className={styles.msmallcircle}>
+                  <div className={styles.mcircletext}>
+                    <p>
+                      Track:
+                      <br />
+                      {band.track}
+                    </p>
+                    <h4>{band.bandName}</h4>
+                    <p>Released: {band.year}</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className={styles.mleft}>
+                <img src={band.leftImg || SideImage_1} alt="" />
+                <h4>Track</h4>
+                <p>
+                  {band.aboutTrack ||
+                    band.trackDescription ||
+                    "Track description."}
+                </p>
               </div>
             </div>
-            <div></div>
-          </div>
-          <div className={styles.mleft}>
-            <img src={SideImage_1} alt="" />
-            <h4>Track</h4>
-            <p>
-              Released in 2019, "Tears Of The Wizard" is a notable track by the
-              famous Indian rock band Parikrama. This release highlights the
-              musical legacy of a Delhi group celebrated throughout Asia for
-              delivering incredibly dynamic and energetic live stage
-              performances.
-            </p>
-          </div>
-          <div></div>
-        </div>
-      </div> */}
-
-      <div className={styles.mobileWrapper}>
-  <div className={styles.mTitle}>
-    <img src={data.BandNameTitle} alt="Band Title" className={styles.mBandName} />
-    <img src={data.DecadeTitle} alt="Decade Title" className={styles.mDecadeTitle} />
-  </div>
-  <p className={styles.mDescription}>{data.description}</p>
-
-  {bands.map((band) => {
-    const bandImg = band.albumStack?.[3] || band.middleImg || baseImg;
-    return (
-      <div className={styles.mbottom} key={`mobile-${band.id}`}>
-        <div className={styles.mright}>
-          <img src={band.rightImg || SideImage_2} alt="" />
-          <h4>About</h4>
-          <p>{band.about || band.aboutDescription || "Band description."}</p>
-        </div>
-
-        <div className={styles.middle}>
-          <img src={bandImg} alt="" className={styles.mrect} />
-          <img src={bandImg} alt="" className={styles.mcircle} />
-          <div className={styles.msmallcircle}>
-            <div className={styles.mcircletext}>
-              <p>Track:<br />{band.track}</p>
-              <h4>{band.bandName}</h4>
-              <p>Released: {band.year}</p>
-            </div>
-          </div>
-        </div>
-
-        <div className={styles.mleft}>
-          <img src={band.leftImg || SideImage_1} alt="" />
-          <h4>Track</h4>
-          <p>{band.aboutTrack || band.trackDescription || "Track description."}</p>
-        </div>
+          );
+        })}
       </div>
-    );
-  })}
-</div>
     </div>
   );
 };

@@ -49,29 +49,48 @@ const PastWinners = () => {
       />
 
       <div className={styles.CardContainer}>
-        {pastWinnersData.map((winner,index) => (
-          <div
-            key={winner.id}
-            className={styles.Card}
-            style={{ backgroundImage: index ===1? `url(${PastWinnersCardBg1})`:`url(${PastWinnersCardBg})`, }}
-            onClick={() => openWinner(winner)}
-          >
-            <h2 className={styles.CardDecadeTop}>
-              {winner.decadetop}
-            </h2>
+        {pastWinnersData.map((winner, index) => {
+          // Desktop: second card uses CardBg1. Mobile: every card uses CardBg.
+          const desktopBg =
+            index === 1
+              ? `url(${PastWinnersCardBg1})`
+              : `url(${PastWinnersCardBg})`;
+          const mobileBg = `url(${PastWinnersCardBg})`;
 
-            <div className={styles.AlbumStack}>
-              <img
-                src={winner.albumStack}
-                alt="Album Stack"
-              />
+          return (
+            <div
+              key={winner.id}
+              className={`${styles.Card} ${
+                index === 1 ? styles.SecondCard : ""
+              }`}
+              style={{
+                "--desktop-bg": desktopBg,
+                "--mobile-bg": mobileBg,
+              }}
+              onClick={() => openWinner(winner)}
+            >
+              <h2
+                className={`${styles.CardDecadeTop} ${
+                  index === 1 ? styles.CardMiddleTop : ""
+                }`}
+              >
+                {winner.decadetop}
+              </h2>
+
+              <div className={styles.AlbumStack}>
+                <img src={winner.albumStack} alt="Album Stack" />
+              </div>
+
+              <h2
+                className={`${styles.CardDecadeBottom} ${
+                  index === 1 ? styles.CardMiddleBottom : ""
+                }`}
+              >
+                {winner.decadebottom}
+              </h2>
             </div>
-
-            <h2 className={styles.CardDecadeBottom}>
-              {winner.decadebottom}
-            </h2>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );

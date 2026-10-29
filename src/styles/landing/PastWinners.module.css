@@ -1,4 +1,3 @@
-
 .PastWinnersWrapper {
     width: 100%;
     min-height: 100vh;
@@ -29,6 +28,7 @@
 .Card {
     width: 30%;
     aspect-ratio: 0.72;
+    background-image: var(--desktop-bg);
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center;
@@ -64,6 +64,12 @@
     letter-spacing: .15rem;
 }
 
+.CardMiddleBottom{
+    display: none;
+}
+.CardMiddleTop{
+    display: inline;
+}
 .AlbumStack {
     flex: 1;
     display: flex;
@@ -151,7 +157,12 @@
     width:45%;
     max-width:320px;
 }
-
+.CardMiddleTop{
+    display: none;
+}
+.CardMiddleBottom{
+    display: inline;
+}
 .CardDecadeTop,
 .CardDecadeBottom{
     font-size:1.6rem;
@@ -188,6 +199,7 @@
 .Card{
     width:92%;
     max-width:360px;
+    background-image: var(--mobile-bg);
 }
 
 .CardDecadeTop,
@@ -220,6 +232,7 @@
 
 .Card{
     width:100%;
+    background-image: var(--mobile-bg);
 }
 
 .CardDecadeTop,

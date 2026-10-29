@@ -36,7 +36,6 @@
   object-fit: contain;
 }
 
-
 .DecadeTitle {
   display: block;
   width: 42%;
@@ -68,7 +67,7 @@
 .Description {
   margin-top: 2rem;
   max-width: 700px;
-  color :white;
+  color: white;
   font-family: "Chakra Petch", sans-serif;
   font-size: 1.5rem;
   line-height: 1.5;
@@ -133,7 +132,6 @@
   z-index: 1;
 }
 
-
 .circle {
   position: absolute;
   width: 40vw;
@@ -147,7 +145,6 @@
   pointer-events: none;
   z-index: 100;
 }
-
 
 .smallcircle {
   position: relative;
@@ -175,7 +172,6 @@
   font-size: 1.5rem;
   font-family: "Space Mono", monospace;
   color: white;
-  
 }
 
 .smallcircle p {
@@ -186,8 +182,6 @@
   font-size: 1rem;
   white-space: nowrap;
 }
-
-
 
 .circleTextTop,
 .circleTextBottom {
@@ -207,7 +201,6 @@
   width: 80%;
 }
 
-
 .swipeImg {
   position: absolute;
   width: 45vw;
@@ -224,7 +217,6 @@
   height: 100%;
   object-fit: cover;
 }
-
 
 .swipeCircle {
   position: absolute;
@@ -250,8 +242,6 @@
   object-fit: cover;
 }
 
-
-
 .side {
   display: flex;
   justify-content: space-between;
@@ -264,31 +254,30 @@
   display: flex;
   align-items: flex-start;
   flex-direction: column;
- padding-left: 2vw;
+  padding-left: 2vw;
 }
 
 .left img {
   width: 25vw;
   height: 25vw;
-     padding-left: 2vw;
-   padding-right: 1vw;
-   object-fit: contain;
+  padding-left: 2vw;
+  padding-right: 1vw;
+  object-fit: contain;
 }
 
 .left p {
   width: 25vw;
   color: white;
   font-family: "Chakra Petch";
-   padding-left: 3vw;
-   padding-right: 1vw;
-  
+  padding-left: 3vw;
+  padding-right: 1vw;
 }
 
 .left h4 {
   color: #b53227;
-   padding-left: 3vw;
-   font-family: "Sedgwick Ave Display";
-   font-size: 2rem;
+  padding-left: 3vw;
+  font-family: "Sedgwick Ave Display";
+  font-size: 2rem;
 }
 
 .right {
@@ -299,18 +288,18 @@
 }
 
 .right img {
- width: 25vw;
+  width: 25vw;
   height: 25vw;
-     padding-left: 1vw;
-   padding-right: 2vw;
+  padding-left: 1vw;
+  padding-right: 2vw;
 }
 
 .right p {
   width: 25vw;
   color: white;
   font-family: "Chakra Petch";
-    padding-left: 1vw;
-   padding-right: 2vw;
+  padding-left: 1vw;
+  padding-right: 2vw;
 }
 
 .right h4 {
@@ -320,8 +309,30 @@
   margin-right: 16vw;
 }
 
-.mobileWrapper{
+/* ================= MOBILE ================= */
+
+.mobileWrapper {
   display: none;
+}
+
+/* NEW: back button (mobile) */
+.mBackButton {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  z-index: 10;
+  width: clamp(50px, 10vw, 150px);
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.mBackButton img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
 }
 
 .mBandName {
@@ -329,25 +340,30 @@
   height: auto;
   object-fit: contain;
 }
-.mTitle{
+
+.mTitle {
+  padding-top: 4rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 1rem;
 }
-.mDecadeTitle{
+
+.mDecadeTitle {
   width: 50%;
   height: auto;
   object-fit: contain;
 }
-.mDescription{
+
+.mDescription {
   width: 90%;
   padding-left: 1rem;
   font-family: "Chakra Petch";
   font-size: 1.5rem;
 }
-.mbottom{
+
+.mbottom {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -355,63 +371,104 @@
   gap: 2rem;
   width: 100%;
 }
-.mleft{
+
+/* NEW: band name heading (mobile) */
+.mBandHeader {
+  width: 90%;
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.mBandLabel {
+  margin: 0;
+  color: #b53227;
+  font-family: "Sedgwick Ave Display";
+  margin-bottom: 20px;
+  font-size: clamp(2rem, 15vw, 3.5rem);
+  text-align: center;
+}
+
+.mBandHeading {
+  width: 100%;
+  margin: 0;
+  text-align: center;
+  color: rgb(233, 200, 200);
+  font-family: "Sedgwick Ave Display";
+  font-size: clamp(2rem, 15vw, 3.5rem);
+  line-height: 1.1;
+  text-transform: uppercase;
+  word-break: break-word;
+}
+
+.mleft {
   margin-top: 5rem;
   display: flex;
   flex-direction: column;
-  width: 100%;;
+  width: 100%;
   justify-content: center;
   align-items: center;
 }
-.mleft img{
-width: 80%;
-height: 80%;
+
+.mleft img {
+  width: 80%;
+  height: 80%;
 }
-.mleft h4{
+
+.mleft h4 {
   color: #b53227;
-   font-family: "Sedgwick Ave Display";
-   font-size: 3rem;
-   margin-bottom: 2rem;
+  font-family: "Sedgwick Ave Display";
+  font-size: 3rem;
+  margin-bottom: 2rem;
 }
-.mleft p{
+
+.mleft p {
   width: 80%;
   color: white;
   font-size: 1rem;
 }
 
-.mright{
+.mright {
   display: flex;
   flex-direction: column;
-  width: 100%;;
+  width: 100%;
   justify-content: center;
   align-items: center;
 }
-.mright img{
-width: 80%;
-height: 80%;
+
+.mright img {
+  width: 80%;
+  height: 80%;
 }
-.mright h4{
+
+.mright h4 {
   color: #b53227;
-   font-family: "Sedgwick Ave Display";
-   font-size: 3rem;
-   margin-bottom: 2rem;
+  font-family: "Sedgwick Ave Display";
+  font-size: 3rem;
+  margin-bottom: 2rem;
 }
-.mright p{
+
+.mright p {
   width: 80%;
   color: white;
   font-size: 1rem;
 }
-.middle{
+
+.middle {
   position: relative;
   margin-top: 3rem;
   display: flex;
-  width:100%;
-    justify-content: center;
-}.mrect {
+  width: 100%;
+  justify-content: center;
+}
+
+.mrect {
   width: 90%;
   z-index: 1;
-  aspect-ratio: 1;       /* ← forces square */
-  object-fit: cover;     /* ← crops to fill */
+  aspect-ratio: 1;
+  object-fit: cover;
 }
 
 .mcircle {
@@ -433,51 +490,31 @@ height: 80%;
   transform: translate(-50%, -50%);
   background-color: #430a0a;
   width: 50%;
-  aspect-ratio: 1;       /* ← was height: 50% which doesn't work */
+  aspect-ratio: 1;
   z-index: 3;
   border-radius: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-    gap: clamp(0.3rem, 3vw, 2rem); 
+  gap: clamp(0.3rem, 3vw, 2rem);
 }
+
 @keyframes spin {
   from {
-    transform: translate(-50%,-50%) rotate(0deg);
+    transform: translate(-50%, -50%) rotate(0deg);
   }
   to {
-    transform: translate(-50%,-50%) rotate(360deg); 
-  }}
-/* 
-.msmallcircle{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  background-color: #430a0a;
-  width: 50%;
-  height: 50%;
-  z-index: 3;
-  border-radius: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  aspect-ratio: 1;
-  object-fit: cover;
-  gap: 2rem;
-} */
-
-
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
 
 .msmallcircle h4 {
   margin: 0;
   padding: 0;
-  font-size: clamp(0.9rem, 5vw, 2.5rem); 
+  font-size: clamp(0.9rem, 5vw, 2.5rem);
   font-family: "Space Mono", monospace;
   color: white;
-  
 }
 
 .msmallcircle p {
@@ -485,16 +522,18 @@ height: 80%;
   padding: 0;
   color: white;
   font-family: "Space Mono", monospace;
-  font-size: clamp(0.9rem, 3vw, 2.5rem); 
+  font-size: clamp(0.9rem, 3vw, 2.5rem);
   white-space: nowrap;
 }
-@media(max-width:768px){
 
-  .WinnerDetailsWrapper{
+@media (max-width: 768px) {
+  .WinnerDetailsWrapper {
     display: none;
     visibility: hidden;
   }
-  .mobileWrapper{
+
+  .mobileWrapper {
+    position: relative;
     display: flex;
     width: 100vw;
     height: auto;
@@ -503,13 +542,9 @@ height: 80%;
     align-items: center;
     gap: 4rem;
   }
-  
 }
 
-
-
 @media (min-width: 1170px) and (max-width: 1500px) {
-
   .WinnerDetailsRightSection {
     width: 48%;
     height: 80svh;
@@ -545,43 +580,45 @@ height: 80%;
     left: 14vw;
   }
 
-.circle {
-  position: absolute;
-  width: 40vw;
-  height: 40vw;
-  left: -10vw;
-  top: 50%;
-  margin-left: -20vw;
-  margin-top: -20vw;
-  border-radius: 50%;
-  opacity: 0;
-  pointer-events: none;
-  z-index: 100;
-}
-.smallcircle{
-  left: -10vw;
-}
-.swipeImg {
-  position: absolute;
-  width: 45vw;
-  height: 45vw;
-  left: -33vw;
-  top: 50%;
-  margin-top: -22.5vw;
-  clip-path: inset(100% 0 0 0);
-  overflow: hidden;
-}
+  .circle {
+    position: absolute;
+    width: 40vw;
+    height: 40vw;
+    left: -10vw;
+    top: 50%;
+    margin-left: -20vw;
+    margin-top: -20vw;
+    border-radius: 50%;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 100;
+  }
 
-.swipeCircle {
-  position: absolute;
-  width: 40vw;
-  height: 40vw;
-  left: -10vw;
-  top: 50%;
-  margin-left: -20vw;
-  margin-top: -20vw;
-  border-radius: 50%;
-  overflow: hidden;
-  clip-path: inset(100% 0 0 0);
-}
+  .smallcircle {
+    left: -10vw;
+  }
+
+  .swipeImg {
+    position: absolute;
+    width: 45vw;
+    height: 45vw;
+    left: -33vw;
+    top: 50%;
+    margin-top: -22.5vw;
+    clip-path: inset(100% 0 0 0);
+    overflow: hidden;
+  }
+
+  .swipeCircle {
+    position: absolute;
+    width: 40vw;
+    height: 40vw;
+    left: -10vw;
+    top: 50%;
+    margin-left: -20vw;
+    margin-top: -20vw;
+    border-radius: 50%;
+    overflow: hidden;
+    clip-path: inset(100% 0 0 0);
+  }
 }
